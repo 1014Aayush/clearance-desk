@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-08-24T19:37:14.823871+00:00",
+  "recorded_at": "2026-09-09T09:54:23.713796+00:00",
   "report": {
     "run_id": "run_c342b3556fce",
     "project": {
@@ -394,11 +394,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,

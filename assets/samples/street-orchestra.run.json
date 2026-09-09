@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-09-02T13:04:56.068777+00:00",
+  "recorded_at": "2026-09-09T09:54:23.825927+00:00",
   "report": {
     "run_id": "run_1998f2b51d21",
     "project": {
@@ -1185,11 +1185,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,
@@ -1580,11 +1580,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             },
             {
               "rule_id": "RES-002",
@@ -1955,11 +1955,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,
@@ -2926,11 +2926,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,
@@ -3333,7 +3333,7 @@
           "fired_rules": [
             {
               "rule_id": "SGN-001",
-              "description": "Print material not legible in frame \u2014 no action."
+              "description": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action."
             },
             {
               "rule_id": "PD-001",
@@ -3714,11 +3714,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,
@@ -4522,11 +4522,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,
@@ -4889,11 +4889,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,
@@ -5283,11 +5283,11 @@
           "action": "no_action",
           "documents": [],
           "eo_blocking": false,
-          "rationale": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required.",
+          "rationale": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required.",
           "fired_rules": [
             {
               "rule_id": "TM-001",
-              "description": "Incidental brand appearance in a narrative context \u2014 expressive use; no release required."
+              "description": "Brand appears in a narrative context without hero framing \u2014 expressive use, no implied endorsement; no release required."
             }
           ],
           "fee_low_usd": null,

@@ -269,10 +269,13 @@ Asking an evaluator for a video before the tool will say anything is a bad
 first minute, and whatever they reach for is usually a phone clip of nothing in
 particular — which produces an empty report and reads as the system failing.
 
-Five sixty-second cuts therefore ship with the application, in
-[`assets/samples/`](assets/samples/). Each is an excerpt of a public-domain
-sponsored film from the Prelinger Archives, picked because a lot is happening
-in it at once, and each puts a different problem in front of you:
+Eight short cuts therefore ship with the application, in
+[`assets/samples/`](assets/samples/), each picked because a lot is happening in
+it at once and each putting a different problem in front of you. Five are
+excerpts of public-domain sponsored films from the Prelinger Archives; three
+are Creative Commons excerpts from Wikimedia Commons, added because the archive
+films are half a century old and their owners have mostly dissolved — modern
+footage is what shows the research resolving to a company that still trades:
 
 | Clip | The problem |
 |---|---|
@@ -281,15 +284,21 @@ in it at once, and each puts a different problem in front of you:
 | *Duck and Cover* (1951) | A public-domain film that still contains a character and a song someone may control. |
 | *A Word to the Wives* (1955) | A credited screen performer, named on the main title. |
 | *Chevrolet Sales Convention Musical* (1954) | A crowd of performers rather than one, and wall-to-wall music. |
+| *Shibuya Scramble Crossing* (2021) | Living trade marks whose owners still trade, an advertising screen playing a commercial inside the shot, and a non-US territory. |
+| *Piccadilly Circus* (2015) | A whole advertising wall at once, plus a public sculpture — where the answer turns on freedom of panorama rather than on who owns the mark. |
+| *Street Orchestra Flash Mob* (2016) | A cover recording, so composition and master come apart; and a clip whose own licence does not survive a second look. |
 
-Every clip carries a cue sheet, so the cue sheet path can be exercised without
-one being written first, and the provenance and public-domain basis of each is
-recorded in [`assets/samples/README.md`](assets/samples/README.md). Stock
+The five archive clips carry a cue sheet, so that path can be exercised
+without one being written first; the three modern clips deliberately carry
+none, which leaves the music to be named from the audio alone. Provenance, the
+rights basis of each clip, and the attribution the Creative Commons ones
+require are recorded in
+[`assets/samples/README.md`](assets/samples/README.md). Stock
 footage would have been the easier choice and the wrong one: it is deliberately
 scrubbed of brands, music and recognisable faces, so it demonstrates nothing.
 
 Like the worked example, each sample **replays a recorded pass** rather than
-researching again — five samples researching live on a public URL would bill
+researching again — eight samples researching live on a public URL would bill
 the account hosting the page once per tester per clip. Record them with:
 
 ```bash
@@ -323,9 +332,9 @@ and the sources behind it, rather than with the gap. And the gap section is
 headed *what is still open* when an owner was found, instead of *what nobody
 could establish*.
 
-On the five bundled samples this is the difference between reading as a tool
-that mostly fails and one that identified a rights holder for **39 of the 39
-items it researched**.
+Across the eight bundled samples this is the difference between reading as a
+tool that mostly fails and one that identified a named rights holder for **91
+of the 92 items it researched**.
 
 Recordings are snapshots, so a rule change leaves them stating the old finding.
 Bringing them back into line costs nothing and calls nothing:

@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-08-24T19:37:14.902683+00:00",
+  "recorded_at": "2026-09-09T09:54:23.762026+00:00",
   "report": {
     "run_id": "run_990efa379e1d",
     "project": {
@@ -529,11 +529,11 @@
             "location_agreement"
           ],
           "eo_blocking": false,
-          "rationale": "Print material not legible in frame \u2014 no action.",
+          "rationale": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action.",
           "fired_rules": [
             {
               "rule_id": "SGN-001",
-              "description": "Print material not legible in frame \u2014 no action."
+              "description": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action."
             },
             {
               "rule_id": "ID-002",
@@ -595,11 +595,11 @@
             "location_agreement"
           ],
           "eo_blocking": false,
-          "rationale": "Print material not legible in frame \u2014 no action.",
+          "rationale": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action.",
           "fired_rules": [
             {
               "rule_id": "SGN-001",
-              "description": "Print material not legible in frame \u2014 no action."
+              "description": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action."
             },
             {
               "rule_id": "ID-002",
@@ -661,11 +661,11 @@
             "location_agreement"
           ],
           "eo_blocking": false,
-          "rationale": "Print material not legible in frame \u2014 no action.",
+          "rationale": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action.",
           "fired_rules": [
             {
               "rule_id": "SGN-001",
-              "description": "Print material not legible in frame \u2014 no action."
+              "description": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action."
             },
             {
               "rule_id": "ID-002",
@@ -727,11 +727,11 @@
             "location_agreement"
           ],
           "eo_blocking": false,
-          "rationale": "Print material not legible in frame \u2014 no action.",
+          "rationale": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action.",
           "fired_rules": [
             {
               "rule_id": "SGN-001",
-              "description": "Print material not legible in frame \u2014 no action."
+              "description": "Legible print material, but not the subject of the shot; reproduced as part of a real environment \u2014 no action."
             },
             {
               "rule_id": "ID-002",

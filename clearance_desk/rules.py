@@ -434,8 +434,8 @@ def tm_001(ctx: RuleContext) -> Proposal | None:
     return Proposal(
         rule_id="TM-001",
         description=(
-            "Incidental brand appearance in a narrative context — expressive "
-            "use; no release required."
+            "Brand appears in a narrative context without hero framing — "
+            "expressive use, no implied endorsement; no release required."
         ),
         tier=RiskTier.LOW,
         action=Action.NO_ACTION,
@@ -704,9 +704,18 @@ def lit_001(ctx: RuleContext) -> Proposal | None:
 )
 def sgn_001(ctx: RuleContext) -> Proposal | None:
     if not ctx.is_recognisable or not ctx.is_exposed:
+        # Two different reasons to let it go, and they need different
+        # sentences. Saying "not legible" about copy the spotter graded
+        # clearly identifiable contradicts the evidence printed beside it.
+        reason = (
+            "Print material not legible in frame"
+            if not ctx.is_recognisable
+            else "Legible print material, but not the subject of the shot; "
+            "reproduced as part of a real environment"
+        )
         return Proposal(
             rule_id="SGN-001",
-            description="Print material not legible in frame — no action.",
+            description=f"{reason} — no action.",
             tier=RiskTier.LOW,
             action=Action.NO_ACTION,
             terminal=True,
