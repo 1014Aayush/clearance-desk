@@ -1,0 +1,1321 @@
+{
+  "recorded_at": "2026-08-24T19:37:14.902683+00:00",
+  "report": {
+    "run_id": "run_990efa379e1d",
+    "project": {
+      "title": "Chevrolet Sales Convention Musical",
+      "cut_label": "sample excerpt 3:15-4:15",
+      "runtime_seconds": 60,
+      "distribution_intent": "worldwide, all media, in perpetuity",
+      "territories": [
+        "worldwide"
+      ],
+      "delivery_date": null
+    },
+    "status": "complete",
+    "created_at": "2026-08-24T18:30:21.232644Z",
+    "completed_at": "2026-08-24T18:47:48.564792Z",
+    "entries": [
+      {
+        "item": {
+          "id": "itm_242214cbde",
+          "category": "archival_footage",
+          "title": "Chevrolet Sales Convention Musical",
+          "description": "The entire clip consists of archival footage from what appears to be a corporate stage musical, showing a troupe of female dancers performing a choreographed number.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 60,
+          "scene": null,
+          "prominence": "plot_critical",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": false,
+          "detection_confidence": "high",
+          "evidence": "The entire visual content of the clip, characterized by its film stock, color, and performance style, is consistent with mid-20th century industrial film.",
+          "known_work": "Chevrolet Sales Convention Musical",
+          "known_year": 1955
+        },
+        "finding": {
+          "item_id": "itm_242214cbde",
+          "researched": true,
+          "applicable": true,
+          "holders": [
+            {
+              "name": "Prelinger Archives",
+              "role": "archive",
+              "territory": "worldwide",
+              "share_percent": null,
+              "contact": "Rick Prelinger / Prelinger Archives; prelingerclips@gmail.com is reported for material not in Getty's database",
+              "contact_url": "https://help.archive.org/help/prelinger-archive",
+              "notes": "The IA record places the item in the Prelinger collection and labels it Public Domain, but no title-specific ownership or embedded-rights clearance is documented. Prelinger/IA should confirm whether it can issue a written licence for this exact title.",
+              "identified": true
+            },
+            {
+              "name": "Getty Images",
+              "role": "distributor",
+              "territory": "worldwide",
+              "share_percent": null,
+              "contact": "Getty Images licensing/contact route",
+              "contact_url": "https://www.gettyimages.com/contactus",
+              "notes": "Documented commercial stock representative for Prelinger Archives. Exact Getty asset match, contributor, title-level chain of title, and whether the requested all-media/perpetuity grant is available were not confirmed.",
+              "identified": true
+            },
+            {
+              "name": "Rick Ray",
+              "role": "unknown",
+              "territory": null,
+              "share_percent": null,
+              "contact": "Rick Ray Films contact page",
+              "contact_url": "https://rickrayfilms.com/contact/",
+              "notes": "Shutterstock clip 4032811 lists contributor Rick Ray and an upload date of 6 June 2013. Rick Ray's site says DVarchive/RetroFootage content is sold through selected suppliers, but no evidence proves ownership or authority over this 1955 film or its embedded rights.",
+              "identified": true
+            },
+            {
+              "name": "Handy (Jam) Organization",
+              "role": "unknown",
+              "territory": null,
+              "share_percent": null,
+              "contact": "Not published in the located records",
+              "contact_url": "https://archive.org/details/Chevrole1954",
+              "notes": "Credited as creator; current legal ownership, assignments and relationship to General Motors/Prelinger were not established.",
+              "identified": true
+            },
+            {
+              "name": "General Motors Corporation",
+              "role": "trademark proprietor",
+              "territory": null,
+              "share_percent": null,
+              "contact": "GM licensing page",
+              "contact_url": "https://www.gm.com/licensing",
+              "notes": "Chevrolet/GM marks and branded products appear to be depicted, but the located sources do not establish a title-specific film copyright claim or trademark licence. Obtain brand/trademark and endorsement review separately.",
+              "identified": true
+            },
+            {
+              "name": "Unidentified composers, music publishers, master owners and performers",
+              "role": "unknown",
+              "territory": null,
+              "share_percent": null,
+              "contact": "Not identified",
+              "contact_url": null,
+              "notes": "The clip is a musical stage performance, but no cue sheet, names, compositions, publisher, master-owner or performer-release information was located. Treat these as open rights claims, not cleared by the archive label.",
+              "identified": false
+            }
+          ],
+          "public_domain": null,
+          "public_domain_rationale": "The Internet Archive record labels the item \u201cUsage Public Domain\u201d and gives a tentative 1954-55? date, but the Public Domain Mark is a label and the archive guidance says it does not provide rights commentary beyond the Creative Commons licence. The U.S. Copyright Office states that pre-1978 works have different rules and that notice, publication date and renewal affect duration; its general pre-1978 framework allowed an initial 28-year term plus a possible 67-year renewal, up to 95 years. Thus a properly published 1955 U.S. work could remain protected through the end of 2050 if the applicable notice/renewal conditions were met, while a work published without the required notice or otherwise not renewed may have a different result. Because the title's notice, registration, renewal and chain of title were not verified, U.S. public-domain status is UNCLEAR. The label also does not resolve separate performer, publicity/privacy, music, trademark or other rights.",
+          "first_publication_year": null,
+          "territory_notes": "The Internet Archive/Prelinger guidance describes reuse in any medium or market throughout the world, but does not state a licence duration and does not furnish a title-specific written licence. Getty is the documented commercial representative for Prelinger. If the exact asset is available from Getty as royalty-free, Getty's current terms describe worldwide, unlimited, perpetual, non-exclusive use; rights-managed/rights-ready terms are limited to the territory, period, media and other selections in the order. The requested worldwide/all-media/in-perpetuity scope must be confirmed in the signed, title-specific agreement. Foreign publicity, privacy, performer, music, trademark and moral-rights rules may differ.",
+          "licensing_precedent": "No documented prior film or television licence for this exact Chevrolet Sales Convention Musical was located, and no title-specific fee was reported. The work is publicly viewable through Internet Archive/YouTube and a matching 156-second Shutterstock listing exists, but availability or upload is not evidence of a prior cleared film/TV use. The only fee evidence found was a generic Television Academy benchmark of a $500-$1,000 minimum master fee per clip request; it is not a quote or established market rate for this title.",
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [
+            "No title-specific chain of title was located from Handy (Jam) Organization/General Motors to Prelinger Archives, Getty Images, Rick Ray, Shutterstock, or any other current licensor.",
+            "Internet Archive metadata names no copyright claimant and gives the date only as 1954-55?; the exact first-publication date and any U.S. copyright notice are unverified.",
+            "No authoritative U.S. Copyright Office registration, renewal, assignment, or transfer record for this title was located; the negative catalogue search is not proof that none exists.",
+            "No cue sheet or identification of the music/compositions, composers, publishers, recording/master owner, or performance rights was located.",
+            "No names or releases for the female dancers/other performers were located; publicity/privacy and performer-consent clearance remains open.",
+            "No title-specific statement establishes whether the archive/stock licence covers or excludes music, performers, performance rights, publicity/privacy, property, trademarks, or other underlying works.",
+            "The Shutterstock listing identifies contributor Rick Ray but does not establish that he owns the underlying 1955 film or has authority to clear its embedded rights; the listing's rights/release fields were unavailable.",
+            "No documented prior film/television licence or title-specific fee was located."
+          ],
+          "confidence": "medium",
+          "basis": [
+            {
+              "field": "public_domain",
+              "reasoning": "The archive record labels the item Public Domain but gives only a tentative 1954-55? date. Creative Commons describes the Public Domain Mark as a label, while the Copyright Office explains that pre-1978 terms depended on notice and renewal and could extend to 95 years. The evidence therefore supports an unclear, conditional status rather than a definitive public-domain conclusion.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://archive.org/details/Chevrole1954",
+                  "title": "[Chevrolet Sales Convention Musical] : Handy (Jam) Organization : Free Download, Borrow, and Streaming : Internet Archive",
+                  "excerpts": [
+                    "Publication date [1954-55?](https://archive.org/search.php?query=date:1954-55%3F) Usage [Public Domain Creative Commons License publicdomain](http://creativecommons.org/licenses/publicdomain/ \"Public Domain\") Topics [Automobiles: Sales](https://archive.org/search.php?query=subject%3A%22Automobiles%3A+Sales%22) , [Industrial theater](https://archive.org/search.php?query=subject%3A%22Industrial+theater%22) , [Advertising: In-house](https://archive.org/search.php?query=subject%3A%22Advertising%3A+In-house%22) Item Size 1\\.0G Rare record of song-and-dance at a Chevrolet sales convention, designed to motivate the sales force. Shotlist Musical stage show opening production number. <BR> Addeddate 2002-07-16 00:00:00 Ccnum asr Closed captioning no Collectionid 10013 Color C Country United States External-identifier [urn:cid:bafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki](https://archive.org/search.php?query=external-identifier%3A%22urn%3Acid%3Abafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki%22) [[Filecoin]](https://gateway.ipfs.io/ipfs/bafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki/) Fil-transport boost Identifier Chevrole1954 Identifier-commp baga6ea4seaqb4j4zh6ncw4q6d2xmegy4cstkdqy7py6qhv4wkkore4sebway2ja Numeric\\_id 256 Proddate 1954-55?"
+                  ]
+                },
+                {
+                  "url": "https://creativecommons.org/public-domain/pdm/",
+                  "title": "Public Domain Mark - Creative Commons",
+                  "excerpts": [
+                    "Our Public Domain Mark enables works that are no longer restricted by copyright to be marked as such in a standard and simple way, making them easily discoverable and available to others. Many cultural heritage institutions including museums, libraries and other curators are knowledgeable about the copyright status of paintings, books and manuscripts, photographs and other works in their collections, many of which are old and no longer under copyright. The Public Domain Mark operates as a tag or a label, allowing institutions like those as well as others with such knowledge to communicate that a work is no longer restricted by copyright and can be freely used by others. The mark can also be an important source of information, allowing others to verify a work\u2019s copyright status and learn more about the work."
+                  ]
+                },
+                {
+                  "url": "http://copyright.gov/circs/circ01.pdf",
+                  "title": "Circular 1 Copyright Basics",
+                  "excerpts": [
+                    "When an individual and the hiring party enter into an express written agreement that the work is to be considered a \u201cwork made for hire\u201d and the work is specially ordered or commis- sioned for use as: \u2022 A compilation"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "territory_notes",
+              "reasoning": "Prelinger guidance describes worldwide reuse and directs commercial users to Getty, but does not establish a duration or title-specific grant. Getty's terms distinguish worldwide, perpetual royalty-free use from rights-managed use limited by the order's selections. The requested worldwide, all-media, in-perpetuity scope therefore requires written confirmation.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "http://help.archive.org/help/prelinger-archive",
+                  "title": "Prelinger Archive \u2013 Internet Archive Help Center",
+                  "excerpts": [
+                    "**Are there restrictions on the use of the Prelinger Films? ** The films are available for reuse according to the Creative Commons licenses, if any, that appear with on each film\u2019s detail page. Pursuant to the Creative Commons license, you are warmly encouraged to download, use and reproduce these films in whole or in part, in any medium or market throughout the world. You are also warmly encouraged to share, exchange, redistribute, transfer and copy these films, and especially encouraged to do so for free. Any derivative works that you produce using these films are yours to perform, publish, reproduce, sell, or distribute in any way you wish without any limitations.",
+                    "**How can I get access to stock footage from these films? ** Access to the movies stored on this site in videotape or film form is available to commercial users through Getty Images, representing Prelinger Archives for stock footage sales. Please contact [Getty Images](http://www.gettyimages.com/contactus) . Please visit us at prelinger.com for more information on access to these and similar films."
+                  ]
+                },
+                {
+                  "url": "https://www.gettyimages.com/eula",
+                  "title": "Getty Images",
+                  "excerpts": [
+                    "Getty Images logo Pricing",
+                    "Creative Images Browse millions of royalty-free images and photos, available in a variety of formats and styles, including exclusive visuals you won't find anywhere else. [See all creative images](https://www.gettyimages.com/creative-images/stock-photos) Top image searches Curated by Getty Images"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "unresolved_issues",
+              "reasoning": "The item record lacks claimant, credits and clearance information; the marketplace record lacks rights and release fields; the archival licensing evidence identifies music, artist-release, performance and property rights as potentially separate; and the copyright-catalog evidence does not establish a complete title search. These directly support the listed chain-of-title and embedded-rights gaps.",
+              "confidence": "high",
+              "citations": [
+                {
+                  "url": "https://archive.org/details/Chevrole1954",
+                  "title": "[Chevrolet Sales Convention Musical] : Handy (Jam) Organization : Free Download, Borrow, and Streaming : Internet Archive",
+                  "excerpts": [
+                    "[Chevrolet Sales Convention Musical] by [Handy (Jam) Organization](https://archive.org/search.php?query=creator%3A%22Handy+%28Jam%29+Organization%22) Publication date [1954-55?](https://archive.org/search.php?query=date:1954-55%3F) Usage [Public Domain Creative Commons License publicdomain](http://creativecommons.org/licenses/publicdomain/ \"Public Domain\") Topics [Automobiles: Sales](https://archive.org/search.php?query=subject%3A%22Automobiles%3A+Sales%22) , [Industrial theater](https://archive.org/search.php?query=subject%3A%22Industrial+theater%22) , [Advertising: In-house](https://archive.org/search.php?query=subject%3A%22Advertising%3A+In-house%22) Item Size 1\\.0G Rare record of song-and-dance at a Chevrolet sales convention, designed to motivate the sales force. Shotlist Musical stage show opening production number. <BR> Addeddate 2002-07-16 00:00:00 Ccnum asr Closed captioning no Collectionid 10013 Color C Country United States External-identifier [urn:cid:bafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki](https://archive.org/search.php?query=external-identifier%3A%22urn%3Acid%3Abafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki%22) [[Filecoin]](https://gateway.ipfs.io/ipfs/bafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki/) Fil-transport boost Identifier Chevrole1954 Identifier-commp baga6ea4seaqb4j4zh6ncw4q6d2xmegy4cstkdqy7py6qhv4wkkore4sebway2ja Numeric\\_id 256 Proddate 1954-55?"
+                  ]
+                },
+                {
+                  "url": "https://www.shutterstock.com/pt/video/clip-4032811-1950s---chevrolet-sales-convention-musical-number",
+                  "title": "1950s Chevrolet Sales Convention Musical Number: v\u00eddeo stock (100% livre de direitos) 4032811 | Shutterstock",
+                  "excerpts": [
+                    "Detalhes de V\u00eddeo Stock V\u00eddeo ID: 4032811 1950s - Chevrolet sales convention musical number designed to motivate the sales force. Data de envio: 6 de junho de 2013 Categorias: Pessoas Criado por: Rick Ray"
+                  ]
+                },
+                {
+                  "url": "http://historicfilms.com/92n5",
+                  "title": "Historic Films Stock Footage Archive: COM-34",
+                  "excerpts": [
+                    "Historic Films does not provide music publishing, property, artist release or performance rights for its musical performance footage, nor does it license music"
+                  ]
+                },
+                {
+                  "url": "https://www.gettyimages.com/eula",
+                  "title": "Getty Images",
+                  "excerpts": [
+                    "Adventure Aerial American Flag"
+                  ]
+                },
+                {
+                  "url": "https://archive.org/details/catalogofcopyrig395li",
+                  "title": "Catalog of Copyright Entries, Third Series. Part 5A ...",
+                  "excerpts": [
+                    "The Catalogs of Copyright Entries (CCEs) are published compilations of copyright registration records cataloged from July 1891 through December 1977. These entries alone may not reflect the complete Copyright Office record pertaining to a particular work."
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "first_publication_year",
+              "reasoning": "The archive metadata states \u201c1954-55?\u201d rather than a confirmed single first-publication year. The separate 1955 label is supplied by the user/marketplace context, not independently established as the first publication date.",
+              "confidence": "high",
+              "citations": [
+                {
+                  "url": "https://archive.org/details/Chevrole1954",
+                  "title": "[Chevrolet Sales Convention Musical] : Handy (Jam) Organization : Free Download, Borrow, and Streaming : Internet Archive",
+                  "excerpts": [
+                    "Publication date [1954-55?](https://archive.org/search.php?query=date:1954-55%3F) Usage [Public Domain Creative Commons License publicdomain](http://creativecommons.org/licenses/publicdomain/ \"Public Domain\") Topics [Automobiles: Sales](https://archive.org/search.php?query=subject%3A%22Automobiles%3A+Sales%22) , [Industrial theater](https://archive.org/search.php?query=subject%3A%22Industrial+theater%22) , [Advertising: In-house](https://archive.org/search.php?query=subject%3A%22Advertising%3A+In-house%22) Item Size 1\\.0G"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "typical_fee_high_usd",
+              "reasoning": "The Television Academy source reports a $500-$1,000 minimum per clip request. The high-end value is $1,000, expressly treated as a generic benchmark rather than a title-specific quote.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://interviews.televisionacademy.com/license-our-clips",
+                  "title": "How To Request Footage/Transcripts From The Interviews",
+                  "excerpts": [
+                    "How To Request Footage/Transcripts From The Interviews Masters are created for a minimum fee of $500 - $1000"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "typical_fee_low_usd",
+              "reasoning": "The Television Academy source reports a $500-$1,000 minimum per clip request. The low-end value is $500, expressly treated as a generic benchmark rather than a title-specific quote.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://interviews.televisionacademy.com/license-our-clips",
+                  "title": "How To Request Footage/Transcripts From The Interviews",
+                  "excerpts": [
+                    "How To Request Footage/Transcripts From The Interviews Masters are created for a minimum fee of $500 - $1000"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "rights_holders",
+              "reasoning": "The archive record identifies Handy (Jam) Organization as creator and places the item in Prelinger Archives; Internet Archive guidance identifies Getty as the commercial contact. The Shutterstock record identifies Rick Ray as the contributor, while the Rick Ray site supplies a contact route. GM has an official licensing route, but the evidence does not establish a title-specific film claim, so GM is listed only for possible trademark clearance. Embedded composers, publishers, master owners and performers remain unidentified.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://archive.org/details/Chevrole1954",
+                  "title": "[Chevrolet Sales Convention Musical] : Handy (Jam) Organization : Free Download, Borrow, and Streaming : Internet Archive",
+                  "excerpts": [
+                    "[Chevrolet Sales Convention Musical] by [Handy (Jam) Organization",
+                    "IN COLLECTIONS Prelinger Archives"
+                  ]
+                },
+                {
+                  "url": "http://help.archive.org/help/prelinger-archive",
+                  "title": "Prelinger Archive \u2013 Internet Archive Help Center",
+                  "excerpts": [
+                    "How can I get access to stock footage from these films? ** Access to the movies stored on this site in videotape or film form is available to commercial users through Getty Images, representing Prelinger Archives for stock footage sales. Please contact [Getty Images](http://www.gettyimages.com/contactus) ."
+                  ]
+                },
+                {
+                  "url": "https://www.shutterstock.com/pt/video/clip-4032811-1950s---chevrolet-sales-convention-musical-number",
+                  "title": "1950s Chevrolet Sales Convention Musical Number: v\u00eddeo stock (100% livre de direitos) 4032811 | Shutterstock",
+                  "excerpts": [
+                    "Detalhes de V\u00eddeo Stock V\u00eddeo ID: 4032811 1950s - Chevrolet sales convention musical number designed to motivate the sales force. Data de envio: 6 de junho de 2013 Categorias: Pessoas Criado por: Rick Ray"
+                  ]
+                },
+                {
+                  "url": "https://rickrayfilms.com/",
+                  "title": "Rick Ray Films \u2013 Cinematography, Documentary, Stock Footage",
+                  "excerpts": [
+                    "Rick Ray shoots and provides A+B roll and stock footage for movies, tv, commercial and non-commercial ventures. Rick has produced numerous documentaries and is a regular lecturer on the travel film circuit. Follow Rick Ray Films [facebook](https://facebook.com/RickRayFilms \"Friend me on Facebook\") [youtube](https://www.youtube.com/user/yofitofu1) [vimeo](https://vimeo.com/rickrayfilms) [instagram](http://instagram.com/rickrayfilms/?hl=en) Get in touch Rick Ray Films is headquartered in Ventura, California. [Contact us](https://rickrayfilms.com/contact/"
+                  ]
+                },
+                {
+                  "url": "https://www.gm.com/licensing",
+                  "title": "Licensing | General Motors",
+                  "excerpts": [
+                    "Licensing | General Motors The decision to proceed to the next steps in the process will be based on GM\u2019s strict licensing criteria. Before becoming an official Licensee, additional information will be required through a full application."
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "public_domain_rationale",
+              "reasoning": "The item is marked Public Domain but has an uncertain date and no claimant or registration information. Creative Commons characterizes the Public Domain Mark as a label, and the Copyright Office states that notice and renewal determine the treatment of pre-1978 works. That combination supports the recorded UNCLEAR conclusion.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://archive.org/details/Chevrole1954",
+                  "title": "[Chevrolet Sales Convention Musical] : Handy (Jam) Organization : Free Download, Borrow, and Streaming : Internet Archive",
+                  "excerpts": [
+                    "Publication date [1954-55?](https://archive.org/search.php?query=date:1954-55%3F) Usage [Public Domain Creative Commons License publicdomain](http://creativecommons.org/licenses/publicdomain/ \"Public Domain\") Topics [Automobiles: Sales](https://archive.org/search.php?query=subject%3A%22Automobiles%3A+Sales%22) , [Industrial theater](https://archive.org/search.php?query=subject%3A%22Industrial+theater%22) , [Advertising: In-house](https://archive.org/search.php?query=subject%3A%22Advertising%3A+In-house%22) Item Size 1\\.0G Rare record of song-and-dance at a Chevrolet sales convention, designed to motivate the sales force. Shotlist Musical stage show opening production number. <BR> Addeddate 2002-07-16 00:00:00 Ccnum asr Closed captioning no Collectionid 10013 Color C Country United States External-identifier [urn:cid:bafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki](https://archive.org/search.php?query=external-identifier%3A%22urn%3Acid%3Abafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki%22) [[Filecoin]](https://gateway.ipfs.io/ipfs/bafybeiavhrqkpvdnxrvovzuhd274clvf4q7kehx3de46avymyjlv7s62ki/) Fil-transport boost Identifier Chevrole1954 Identifier-commp baga6ea4seaqb4j4zh6ncw4q6d2xmegy4cstkdqy7py6qhv4wkkore4sebway2ja Numeric\\_id 256 Proddate 1954-55?"
+                  ]
+                },
+                {
+                  "url": "https://creativecommons.org/public-domain/pdm/",
+                  "title": "Public Domain Mark - Creative Commons",
+                  "excerpts": [
+                    "Our Public Domain Mark enables works that are no longer restricted by copyright to be marked as such in a standard and simple way, making them easily discoverable and available to others. Many cultural heritage institutions including museums, libraries and other curators are knowledgeable about the copyright status of paintings, books and manuscripts, photographs and other works in their collections, many of which are old and no longer under copyright. The Public Domain Mark operates as a tag or a label, allowing institutions like those as well as others with such knowledge to communicate that a work is no longer restricted by copyright and can be freely used by others. The mark can also be an important source of information, allowing others to verify a work\u2019s copyright status and learn more about the work."
+                  ]
+                },
+                {
+                  "url": "http://copyright.gov/circs/circ01.pdf",
+                  "title": "Circular 1 Copyright Basics",
+                  "excerpts": [
+                    "When an individual and the hiring party enter into an express written agreement that the work is to be considered a \u201cwork made for hire\u201d and the work is specially ordered or commis- sioned for use as: \u2022 A compilation \u2022 A contribution to a collective work \u2022 A part of a motion picture or other audiovisual work",
+                    "provide practical and legal benefits. Notice typically consists of the copyright symbol or the word \u201cCopyright,\u201d the name of the copyright owner, and the year of first publication. Placing a copyright notice on a work is not a substitute for registration."
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "licensing_precedent",
+              "reasoning": "The exact-work evidence is descriptive catalogue and viewing material, not documentation of a prior film or television licence. The only reported fee is a generic minimum master fee per clip request, so no title-specific precedent or fee is supported.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://16mmfilmography.org/film/chevrolet-sales-convention-musical/",
+                  "title": "[Chevrolet Sales Convention Musical] \u2013 16mm Filmography",
+                  "excerpts": [
+                    "Sound: Sound."
+                  ]
+                },
+                {
+                  "url": "https://interviews.televisionacademy.com/license-our-clips",
+                  "title": "How To Request Footage/Transcripts From The Interviews",
+                  "excerpts": [
+                    "How To Request Footage/Transcripts From The Interviews Masters are created for a minimum fee of $500 - $1000 (per clip request), and can be delivered as a digital file via FTP or download. Please contact us for"
+                  ]
+                }
+              ]
+            }
+          ],
+          "provider": "parallel",
+          "processor": "pro",
+          "run_id": "trun_0cc180bf4cc74b38a2b96789b4bfaa92",
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_242214cbde",
+          "tier": "blocking",
+          "action": "legal_review",
+          "documents": [
+            "archival_footage_license"
+          ],
+          "eo_blocking": true,
+          "rationale": "Owner identified, but the chain to today is incomplete \u2014 No title-specific chain of title was located from Handy (Jam) Organization/General Motors to Prelinger Archives, Getty Images, Rick Ray,\u2026 (and 7 further gaps). Cannot be cleared until the current holder is confirmed.",
+          "fired_rules": [
+            {
+              "rule_id": "ARC-001",
+              "description": "Archival footage licence required; check whether nested rights (persons, music, underlying works) are included or excluded."
+            },
+            {
+              "rule_id": "CHAIN-001",
+              "description": "Owner identified, but the chain to today is incomplete \u2014 No title-specific chain of title was located from Handy (Jam) Organization/General Motors to Prelinger Archives, Getty Images, Rick Ray,\u2026 (and 7 further gaps). Cannot be cleared until the current holder is confirmed."
+            }
+          ],
+          "fee_low_usd": 4000.0,
+          "fee_high_usd": 14300.0,
+          "lead_time_days": 45
+        },
+        "outreach_draft": "Dear Prelinger Archives,\n\nWe are writing on behalf of the production 'Chevrolet Sales Convention Musical' to request a license for archival footage.\n\nThe material appears from 0:00:00 to 0:01:00, with an approximate duration of one minute. The entire clip consists of archival footage from what appears to be a corporate stage musical, showing a troupe of female dancers performing a choreographed number.\n\nWe are seeking a license for worldwide, all media, in perpetuity.\n\nPlease note that the rights to any underlying musical composition and its sound recording may be controlled separately. Kindly advise if you control only one side of these rights.\n\nWe have not located a clear chain of title from Handy (Jam) Organization/General Motors to Prelinger Archives, Getty Images, Rick Ray, Shutterstock, or any other current licensor. The Internet Archive metadata names no copyright claimant and gives the date only as 1954-55. The exact first-publication date and any U.S. copyright notice are unverified. We would appreciate any guidance you can offer regarding the current ownership of this material.\n\nPlease confirm if you are able to license this material, your fee, and any restrictions that may apply."
+      },
+      {
+        "item": {
+          "id": "itm_d224523332",
+          "category": "music_sync",
+          "title": "Unknown Orchestral Showtune",
+          "description": "A continuous, upbeat, orchestral big-band style score accompanies the dance performance throughout the entire clip.",
+          "source": "cue_sheet",
+          "start_seconds": 0,
+          "end_seconds": 60,
+          "scene": null,
+          "prominence": "hero",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": true,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": false,
+          "detection_confidence": "high",
+          "evidence": "Confirmed against the production's cue sheet",
+          "known_work": "Convention Chorus Number",
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_d224523332",
+          "researched": true,
+          "applicable": true,
+          "holders": [
+            {
+              "name": "Unknown composition claimant (not identified)",
+              "role": "publisher",
+              "territory": "Unknown; requested territory is worldwide",
+              "share_percent": null,
+              "contact": "No licensing contact identified",
+              "contact_url": null,
+              "notes": "This is an unresolved composition-side claimant slot, not a confirmed legal entity. The accessible record names no cue, composer, lyricist, arranger, publisher, registration, or current administrator. Chevrolet and Handy (Jam) Organization should not be treated as the current publisher without the commission and assignment records.",
+              "identified": false
+            },
+            {
+              "name": "Unknown owner of the specific sound recording (not identified)",
+              "role": "master owner",
+              "territory": "Unknown; requested territory is worldwide",
+              "share_percent": null,
+              "contact": "No licensing contact identified",
+              "contact_url": null,
+              "notes": "This is an unresolved master-side claimant slot, not a confirmed legal entity. No performer, label, producer, recording identifier, fixation/session record, or master assignment was found. The archive's designation for the hosted film copy is not a master-chain clearance.",
+              "identified": false
+            }
+          ],
+          "public_domain": null,
+          "public_domain_rationale": "Public-domain status is unclear, not yes. The archive record says the film item is dated 1954 and carries a Public Domain Creative Commons designation, while the catalogued music record does not identify the underlying work or its recording. The U.S. Copyright Office states that works originally copyrighted from 1950 through 1963 had to be renewed for a second term; with valid renewal the total term can be 95 years, while failure to renew caused expiration at the end of the 28th year. For an anonymous, pseudonymous, or work-made-for-hire work, the general rule is 95 years from first publication or 120 years from creation, whichever expires first. Because first publication, creation/fixation, notice, claimant, renewal, and work-made-for-hire status are all unverified, neither the composition nor the master can safely be treated as U.S. public domain. The repository label also does not establish foreign public-domain status.",
+          "first_publication_year": null,
+          "territory_notes": "The requested grant is worldwide, all media, in perpetuity, with hero prominence. No composition or master territory split is documented. The archive's U.S.-oriented Public Domain Creative Commons designation is not proof of worldwide public-domain status or of a worldwide license for the underlying music. If the cue is protected, composition synchronization and specific-master use must each be cleared for the requested scope; no current territorial controller has been identified.",
+          "licensing_precedent": "No documented prior film or television licensing of the exact work or recording was located. The public records found describe only a rare Chevrolet sales-convention song-and-dance film and provide no named musical work, composer, publisher, performer, label, master owner, license, or transfer. This is a search result, not proof that no private license or historical use exists.",
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [
+            "Cue identity is missing: obtain the audio or score and the full cue-sheet entry for 0:00:00\u20130:01:00, including exact title, composer, lyricist, arranger, and whether the music is original, adapted, or library music.",
+            "Composition chain cannot be traced: no registration number, copyright notice, renewal or claimant record, publisher/administrator, writer shares, assignment, or work-made-for-hire/commission agreement was located.",
+            "Master chain cannot be traced: no specific recording identifier, fixation/release date, performer or ensemble, label/producer, ISRC, session or union paperwork, or master assignment was located.",
+            "Commission/film-contract gap: the public records credit Chevrolet and/or Handy (Jam) Organization for the film, but do not show a contract transferring composition or master rights or identify a current successor/assignee.",
+            "Repository-license gap: the Internet Archive public-domain designation has not been tied to the underlying composition and the particular sound recording, and no worldwide rights grant is shown.",
+            "No work-specific fee or prior film/television license for this cue was located; a clearance quote must await identification of the claimants and confirmation of scope."
+          ],
+          "confidence": "low",
+          "basis": [],
+          "provider": "parallel",
+          "processor": "pro",
+          "run_id": "trun_0cc180bf4cc74b389f8f4650ef9fe075",
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_d224523332",
+          "tier": "blocking",
+          "action": "legal_review",
+          "documents": [
+            "sync_license",
+            "master_use_license"
+          ],
+          "eo_blocking": true,
+          "rationale": "No owner could be identified \u2014 Cue identity is missing: obtain the audio or score and the full cue-sheet entry for 0:00:00\u20130:01:00, including exact title, composer, lyricist,\u2026 (and 5 further gaps). Cannot be cleared until ownership is established.",
+          "fired_rules": [
+            {
+              "rule_id": "MUS-001",
+              "description": "Song in picture: synchronisation licence (publisher) and master use licence (recording owner) both required."
+            },
+            {
+              "rule_id": "MUS-003",
+              "description": "Recording is audible in the clear \u2014 no de minimis mitigation available for sound recordings."
+            },
+            {
+              "rule_id": "CHAIN-001",
+              "description": "No owner could be identified \u2014 Cue identity is missing: obtain the audio or score and the full cue-sheet entry for 0:00:00\u20130:01:00, including exact title, composer, lyricist,\u2026 (and 5 further gaps). Cannot be cleared until ownership is established."
+            }
+          ],
+          "fee_low_usd": 12800.0,
+          "fee_high_usd": 56000.0,
+          "lead_time_days": 45
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_c98fe8d15f",
+          "category": "signage_print",
+          "title": "NEW HIGHS IN OPPORTUNITY",
+          "description": "A large sign with the text 'NEW HIGHS IN OPPORTUNITY' is displayed in a frame above the stage on the left.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 5,
+          "scene": null,
+          "prominence": "featured",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": true,
+          "detection_confidence": "high",
+          "evidence": "The sign is clearly legible in the opening wide shot of the stage.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_c98fe8d15f",
+          "researched": false,
+          "applicable": false,
+          "holders": [],
+          "public_domain": null,
+          "public_domain_rationale": null,
+          "first_publication_year": null,
+          "territory_notes": null,
+          "licensing_precedent": null,
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [],
+          "confidence": "low",
+          "basis": [],
+          "provider": "skipped",
+          "processor": null,
+          "run_id": null,
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_c98fe8d15f",
+          "tier": "low",
+          "action": "no_action",
+          "documents": [
+            "location_agreement"
+          ],
+          "eo_blocking": false,
+          "rationale": "Print material not legible in frame \u2014 no action.",
+          "fired_rules": [
+            {
+              "rule_id": "SGN-001",
+              "description": "Print material not legible in frame \u2014 no action."
+            },
+            {
+              "rule_id": "ID-002",
+              "description": "One-off physical object with no public identity; no rights holder is discoverable. Ordinarily covered by the location agreement for the shoot \u2014 confirm that agreement extends to set dressing."
+            }
+          ],
+          "fee_low_usd": null,
+          "fee_high_usd": null,
+          "lead_time_days": null
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_11287e5694",
+          "category": "signage_print",
+          "title": "NEW HIGHS IN LEADERSHIP",
+          "description": "A large sign with the text 'NEW HIGHS IN LEADERSHIP' is displayed in a frame above the stage in the center.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 5,
+          "scene": null,
+          "prominence": "featured",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": true,
+          "detection_confidence": "high",
+          "evidence": "The sign is clearly legible in the opening wide shot of the stage.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_11287e5694",
+          "researched": false,
+          "applicable": false,
+          "holders": [],
+          "public_domain": null,
+          "public_domain_rationale": null,
+          "first_publication_year": null,
+          "territory_notes": null,
+          "licensing_precedent": null,
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [],
+          "confidence": "low",
+          "basis": [],
+          "provider": "skipped",
+          "processor": null,
+          "run_id": null,
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_11287e5694",
+          "tier": "low",
+          "action": "no_action",
+          "documents": [
+            "location_agreement"
+          ],
+          "eo_blocking": false,
+          "rationale": "Print material not legible in frame \u2014 no action.",
+          "fired_rules": [
+            {
+              "rule_id": "SGN-001",
+              "description": "Print material not legible in frame \u2014 no action."
+            },
+            {
+              "rule_id": "ID-002",
+              "description": "One-off physical object with no public identity; no rights holder is discoverable. Ordinarily covered by the location agreement for the shoot \u2014 confirm that agreement extends to set dressing."
+            }
+          ],
+          "fee_low_usd": null,
+          "fee_high_usd": null,
+          "lead_time_days": null
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_a842171345",
+          "category": "signage_print",
+          "title": "NEW HIGHS IN PRODUCT",
+          "description": "A large sign with the text 'NEW HIGHS IN PRODUCT' is displayed in a frame above the stage on the right.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 5,
+          "scene": null,
+          "prominence": "featured",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": true,
+          "detection_confidence": "high",
+          "evidence": "The sign is clearly legible in the opening wide shot of the stage.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_a842171345",
+          "researched": false,
+          "applicable": false,
+          "holders": [],
+          "public_domain": null,
+          "public_domain_rationale": null,
+          "first_publication_year": null,
+          "territory_notes": null,
+          "licensing_precedent": null,
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [],
+          "confidence": "low",
+          "basis": [],
+          "provider": "skipped",
+          "processor": null,
+          "run_id": null,
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_a842171345",
+          "tier": "low",
+          "action": "no_action",
+          "documents": [
+            "location_agreement"
+          ],
+          "eo_blocking": false,
+          "rationale": "Print material not legible in frame \u2014 no action.",
+          "fired_rules": [
+            {
+              "rule_id": "SGN-001",
+              "description": "Print material not legible in frame \u2014 no action."
+            },
+            {
+              "rule_id": "ID-002",
+              "description": "One-off physical object with no public identity; no rights holder is discoverable. Ordinarily covered by the location agreement for the shoot \u2014 confirm that agreement extends to set dressing."
+            }
+          ],
+          "fee_low_usd": null,
+          "fee_high_usd": null,
+          "lead_time_days": null
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_952ef85e8e",
+          "category": "signage_print",
+          "title": "'55",
+          "description": "The number '55, likely signifying the year 1955, is visible above the stage between the center and right-hand signs.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 5,
+          "scene": null,
+          "prominence": "background",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": true,
+          "detection_confidence": "high",
+          "evidence": "The number is visible in the opening wide shot.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_952ef85e8e",
+          "researched": false,
+          "applicable": false,
+          "holders": [],
+          "public_domain": null,
+          "public_domain_rationale": null,
+          "first_publication_year": null,
+          "territory_notes": null,
+          "licensing_precedent": null,
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [],
+          "confidence": "low",
+          "basis": [],
+          "provider": "skipped",
+          "processor": null,
+          "run_id": null,
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_952ef85e8e",
+          "tier": "low",
+          "action": "no_action",
+          "documents": [
+            "location_agreement"
+          ],
+          "eo_blocking": false,
+          "rationale": "Print material not legible in frame \u2014 no action.",
+          "fired_rules": [
+            {
+              "rule_id": "SGN-001",
+              "description": "Print material not legible in frame \u2014 no action."
+            },
+            {
+              "rule_id": "ID-002",
+              "description": "One-off physical object with no public identity; no rights holder is discoverable. Ordinarily covered by the location agreement for the shoot \u2014 confirm that agreement extends to set dressing."
+            }
+          ],
+          "fee_low_usd": null,
+          "fee_high_usd": null,
+          "lead_time_days": null
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_3686b64634",
+          "category": "font_typeface",
+          "title": "Unknown 3D Sans-Serif Font",
+          "description": "The text on the three main signs above the stage is written in a bold, stylized, sans-serif typeface with a 3D shadow effect.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 5,
+          "scene": null,
+          "prominence": "featured",
+          "identifiability": "partial",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": false,
+          "detection_confidence": "medium",
+          "evidence": "The typeface is clearly visible on the signs in the opening shot.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_3686b64634",
+          "researched": true,
+          "applicable": true,
+          "holders": [
+            {
+              "name": "Jeff Levine",
+              "role": "artist",
+              "territory": "worldwide",
+              "share_percent": null,
+              "contact": "Jeff Levine Fonts; direct contact details not publicly identified in the available record",
+              "contact_url": "https://www.jefflevinefonts.com/",
+              "notes": "Public listings identify Jeff Levine as both the designer and publisher/foundry of Sales Convention JNL. The likely relevant family contains Regular and Oblique styles. Obtain written confirmation that Jeff Levine controls the audiovisual rights and request a project-specific licence for Chevrolet Sales Convention Musical.",
+              "identified": true
+            },
+            {
+              "name": "MyFonts",
+              "role": "distributor",
+              "territory": "worldwide",
+              "share_percent": null,
+              "contact": "help@myfonts.com",
+              "contact_url": "https://www.myfonts.com/pages/faq",
+              "notes": "MyFonts is the retail marketplace through which the font is listed and licensed. The available records identify Jeff Levine, not MyFonts, as the designer and publisher; MyFonts should not be treated as the underlying IP owner without contractual confirmation.",
+              "identified": true
+            }
+          ],
+          "public_domain": false,
+          "public_domain_rationale": "Sales Convention JNL is identified as a digitally redrawn typeface with a MyFonts debut of October 4, 2021, so its font software and digital artwork should be treated as proprietary rather than public domain in 2026. The source material described for the typeface includes a 1937 Electrolux banquet-menu lettering style, but that historical source does not place the later digital font software in the public domain. Separately, the 1954\u201355 Chevrolet film copy is labelled public domain by the Internet Archive; that status does not clear the separately used font.",
+          "first_publication_year": 2021,
+          "territory_notes": "The likely match is Sales Convention JNL by Jeff Levine. The standard MyFonts desktop licence covers installation in licensed desktop applications and creation of static, flattened images, but it does not expressly grant worldwide film, television/broadcast, or all-media rights. Motion-graphics use may be covered when the type is rendered into a non-editable image, but a separate written audiovisual/broadcast licence should be obtained for this featured, worldwide, perpetual film use. Comparable foundry broadcast licences commonly cover rendered titles, credits, captions, and motion graphics worldwide on a project-specific, perpetual basis, while prohibiting redistribution of the raw font files.",
+          "licensing_precedent": "No documented prior film or television licence, placement, or fee for Sales Convention JNL was found. The available product listing supplies retail pricing and licensing categories, while comparable broadcast licences show the usual structure: worldwide, project-specific permission to render titles and motion graphics, often perpetual, with raw-font redistribution excluded.",
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [
+            "The typeface identification is not visually verified: Sales Convention JNL is a likely match based on the production title and period-style description, but no frame or glyph sample was supplied for a definitive match.",
+            "The legal entity behind the public-facing name Jeff Levine / Jeff Levine Font Foundry is not identified in the available records.",
+            "No Jeff Levine audiovisual or broadcast EULA was located; the precise permissions for theatrical film, television broadcast, streaming, perpetual term, and all-media exploitation must be confirmed directly.",
+            "No public Jeff Levine quote for this production was located; the fee range below is a budgeting benchmark rather than a confirmed licence offer."
+          ],
+          "confidence": "medium",
+          "basis": [
+            {
+              "field": "public_domain",
+              "reasoning": "The product listing identifies Sales Convention JNL as a digital redrawing and states that its MyFonts debut was October 4, 2021. That recent proprietary font release is not out of copyright by 2026; the 1937 source lettering is not the same work as the later digital font software.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/collections/sales-convention-jnl-font-jeff-levine",
+                  "title": "Sales Convention JNL Font | Webfont & Desktop | MyFonts",
+                  "excerpts": [
+                    "The 1937 Electrolux (Eastern) Appreciation Banquet has its own menu cover, and the lettering was in a simple, yet Art-Deco influenced condensed block design with squared features. This simple and quirky typeface has been digitally redrawn as Sales Convention JNL, and is available in both regular and oblique versions. Designers: Jeff Levine Foundry: Jeff Levine MyFonts debut: Oct 4, 2021 Sales Convention JNL About Jeff Levine Jeff Levine has been in love with lettering since the third grade, when a schoolmate brought a lettering stencil into class. He has worked in both the graphics and music industries, and began his work with digital type via his own site, which hosted over one hundred free dingbat fonts until its retirement in 2009."
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "territory_notes",
+              "reasoning": "The MyFonts FAQ says its standard licence categories are Desktop, Webfont, App, Electronic Doc, and Digital Ad/Email, and describes the desktop tier as covering desktop installation and static images while prohibiting distribution or embedding of the font. A separate audiovisual licence example expressly covers titles, captions, credits, motion graphics, worldwide broadcast, and flattened deliverables, but restricts the grant to specified audiovisual projects. Therefore the requested worldwide, all-media, perpetual film use is not confirmed by the ordinary desktop purchase and needs written audiovisual clearance.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/pages/faq",
+                  "title": "FAQ | MyFonts",
+                  "excerpts": [
+                    "Licensing Select a font license based on your needs. We sell Desktop, Webfont, Mobile App, Digital Ad and Electronic Doc licenses. This makes it easy to extend your brand and designs across platforms. To overcome indigestible legal writing, each font family page features a \u2018Licensing\u2019 tab. The Licensing tab offers use cases, laymen descriptors, and a hyperlink to the EULA. Logo _Where is the logo license?_ \u2014 Minimally a Desktop license would be required to use a font in a logo, so that the font can be installed onto a workstation, and the design be created within a desktop application. Please be sure to review the listing foundry\u2019s Desktop EULA as some restrictions may apply. To view any EULA, select the \u2018Licensing\u2019 tab, and click the hyperlink below the descriptor for the EULA. The Desktop EULA may not specifically say, 110% okay to use the font within a logo Do not fear \u2014 Desktop EULAs that typically permit usage within a logo contain a term along the lines of, You may use the licensed fonts to create images on any surface\u2026where the image is a fixed size. You may use the licensed fonts to create EPS files or other scalable drawings provided that such files are only used by the household or company licensing the font. Uploading fonts to Canva Unfortunately, none of our licenses available through MyFonts permits the upload or use of fonts within Canva. Under the current Monotype Desktop Font End User License Agreement (EULA), the fonts you have licensed may only be installed and used on the number of licensed desktop computers covered by your license. Uploading or using these fonts on cloud-based or server-hosted platforms, including Canva, is not permitted, as this extends the fonts beyond the licensed desktop environment and enables use cases that are not covered by the license terms. The same restriction applies to the other standard license types available for online purchase. However, we would be happy to help you identify the licensing solution that best fits your intended use. Please feel free to contact our [help@myfonts.com](mailto:help@myfonts.com) team for further assistance. Purchasing for a client or third party Be sure to enter your client's name or their company name into the 'License Information' field during the checkout process. This will set the License Owner and will appear on the receipt/invoice. If you\u2019ve made a typo, [help@myfonts.com](mailto:help@myfonts.com) immediately for assistance. Licensing the correct quantity Once a product is added to the cart, the smallest quantity license is added by default. The license quantity can be updated on the cart page by selecting the \u2018update quantity\u2019 option for each item, and following the prompts in the window that appears. Desktop Desktop licenses are based on the number of users of the fonts. Desktop packages will work on both Mac OS X and Windows systems. Desktop licenses are entry-level licenses and are designed to cover the most common graphic design uses, both personal and professional, for use in desktop applications with a font menu. For example: Install the font on your Mac OS X or Windows system Use the font within desktop applications such as Microsoft Word, Mac Pages, Adobe InDesign, Adobe Photoshop, etc. Create and print documents, as well as static images (.jpeg, .tiff, .png), even if the images are used on a website or within a mobile app. However, distribution and embedding of the font is not allowed."
+                  ]
+                },
+                {
+                  "url": "https://rohhtype.com/licensing-fonts/broadcast",
+                  "title": "Video / Broadcast License | ROHH Type Foundry",
+                  "excerpts": [
+                    "Video / Broadcast License About the license The Video & Broadcast License is designed for the high-stakes world of television, cinema, and digital streaming. It grants you the right to use our typography for titles, on-screen graphics, and credits within a specific number of audiovisual projects or series. This license is essential for professional productions destined for platforms like Netflix, YouTube, or national TV. If you want to use our fonts in a commercial project, you must buy the rights to do so by paying a license fee that varies according to usage and number of users. ... At a Glance Render titles, captions, and motion graphics for the specific audiovisual projects listed on your invoice. Broadcast and retransmit images of the font across television, cinema, and digital streaming platforms worldwide. Deliver final, flattened video files or rendered images to third-party clients and distributors. Install the font on a specific number of production workstations to create the licensed video assets. Use the font for general corporate branding, print advertising, or physical merchandise. Create and legally register a primary brand logo for the production company or the film title itself. Embed the font software into websites, mobile apps, or hardware interfaces. Redistribute the raw font files to clients, broadcast partners, or the public. Use the font software or rendered glyphs to train generative AI or deep learning models. ... END-USER LICENSE AGREEMENT (EULA) \u2013 VIDEO & BROADCAST LICENSE 1. DEFINITIONS **\u201cAudiovisual Work\u201d** means a specific video or broadcast project, including but not limited to a television show episode, a feature film, a commercial, a music video, a video broadcast, or a video hosted on digital streaming platforms (e.g., YouTube, OTT media, VOD). Separate parts or episodes of a series constitute separate Audiovisual Works. **\u201cDerivative Work\u201d** means any work, including but not limited to software, data, or digital assets, based upon or derived from the Font Software (or any portion of the Font Software) in any form. **\u201cFont Software\u201d** means the software or instructions provided by ROHH Type Foundry which, when used on an appropriate device or in an appropriate application, generates typeface and typographic designs, including all bitmap representations, outlines, metadata, and updates. **\u201cPrimary Brand Logo\u201d** means the core, official trademarked insignia, wordmark, or corporate identity used to legally identify a single business entity, product, or service. ... 2. GRANT OF LICENSE & PERMITTED USES Subject to Your full compliance with all the terms and conditions of this Agreement, and upon payment of the applicable fee, ROHH Type Foundry grants You a non-exclusive, non-transferable, revocable, and limited perpetual license to: **2.1. Installation & Creation:** Install the Font Software on the specific number of Workstations specified on Your invoice to create documents, vector graphics, and raster images exclusively for use within the licensed Audiovisual Works. **2.2. Broadcasting & Reproduction:** Reproduce, publicly display, broadcast, and retransmit images of the Font Software (including captions, titles, credits, and inscriptions) within the specific number of Audiovisual Works specified on Your invoice or license confirmation. **2.3. ... 3. RESTRICTIONS & USES NOT COVERED You may not use the Font Software for any purpose not expressly permitted in Section 2. Except as expressly agreed in writing with ROHH Type Foundry, You strictly may not: **3.1. General Desktop Publishing:** Use the Font Software to create general printed materials, physical products, or marketing merchandise outside the scope of the licensed Audiovisual Work. _(Requires a Desktop License)._ **3.2. ... Transfer and Distribution:** Rent, lease, sublicense, give, lend, or distribute the Font Software files to the public, End Users, or clients. If Your client requires the Font Software files to edit the video or titles themselves, they must purchase their own license. **3.5. Exceeding Project Limits:** Reproduce the Font Software in a greater number of Audiovisual Works (e.g., more films or episodes) than specified on Your invoice. _(Requires purchasing a license upgrade)._ **3.6. ... 4. THIRD-PARTY SHARING AND VENDOR PROVISION"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "unresolved_issues",
+              "reasoning": "The product page identifies the designer and publisher but does not establish a separate legal entity, visual-match certainty, or an audiovisual EULA. The licensing FAQ describes ordinary licence categories but does not supply Jeff Levine-specific film and broadcast terms. These omissions correspond to the listed chain-of-title and scope gaps.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/collections/sales-convention-jnl-font-jeff-levine",
+                  "title": "Sales Convention JNL Font | Webfont & Desktop | MyFonts",
+                  "excerpts": [
+                    "Home / Jeff Levine / Sales Convention JNL Sales Convention JNL by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine-foundry?sort_by=price-ascending&pageType=foundryPage) Individual Styles from $29.00 USD Complete family of 2 fonts: $55.10 USD Sales Convention JNL Font Poster 1 Sales Convention JNL Font Poster 2 Sales Convention JNL Font Poster 3 Sales Convention JNL Font Poster 4 Sales Convention JNL Font Poster 5 The Sales Convention JNL Font Family was designed by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine?sort_by=price-ascending&pageType=authorPage) and published by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine-foundry?sort_by=price-ascending&pageType=foundryPage) . Sales Convention JNL contains 2 styles and family package options. More about this family Aa Glyphs Best Value Family Packages Individual Styles Tech Specs Licensing Sales Convention JNL Complete Family 2 fonts ### Best Value! Sales Convention JNL Regular Sales Convention JNL Oblique Per Style: $27.55 USD Pack of 2 styles: $55.10 USD Buying Choices Add to Album Add to Favorites Licensing Options Desktop Webfonts App Electronic Doc Digital Ad/Email Related Tags About the family * * In its heyday, the Starlight Room of the Waldorf-Astoria in New York City quite frequently printed lunch and dinner menus for not only their rotating bill of fare, but also for special events held there. The 1937 Electrolux (Eastern) Appreciation Banquet has its own menu cover, and the lettering was in a simple, yet Art-Deco influenced condensed block design with squared features. This simple and quirky typeface has been digitally redrawn as Sales Convention JNL, and is available in both regular and oblique versions. Designers: Jeff Levine Foundry: Jeff Levine MyFonts debut: Oct 4, 2021 Sales Convention JNL About Jeff Levine Jeff Levine has been in love with lettering since the third grade, when a schoolmate brought a lettering stencil into class. He has worked in both the graphics and music industries, and began his work with digital type via his own site, which hosted over one hundred free dingbat fonts until its retirement in 2009."
+                  ]
+                },
+                {
+                  "url": "https://www.myfonts.com/pages/faq",
+                  "title": "FAQ | MyFonts",
+                  "excerpts": [
+                    "Licensing Select a font license based on your needs. We sell Desktop, Webfont, Mobile App, Digital Ad and Electronic Doc licenses. This makes it easy to extend your brand and designs across platforms. To overcome indigestible legal writing, each font family page features a \u2018Licensing\u2019 tab. The Licensing tab offers use cases, laymen descriptors, and a hyperlink to the EULA. Logo _Where is the logo license?_ \u2014 Minimally a Desktop license would be required to use a font in a logo, so that the font can be installed onto a workstation, and the design be created within a desktop application. Please be sure to review the listing foundry\u2019s Desktop EULA as some restrictions may apply. To view any EULA, select the \u2018Licensing\u2019 tab, and click the hyperlink below the descriptor for the EULA. The Desktop EULA may not specifically say, 110% okay to use the font within a logo Do not fear \u2014 Desktop EULAs that typically permit usage within a logo contain a term along the lines of, You may use the licensed fonts to create images on any surface\u2026where the image is a fixed size. You may use the licensed fonts to create EPS files or other scalable drawings provided that such files are only used by the household or company licensing the font. Uploading fonts to Canva Unfortunately, none of our licenses available through MyFonts permits the upload or use of fonts within Canva. Under the current Monotype Desktop Font End User License Agreement (EULA), the fonts you have licensed may only be installed and used on the number of licensed desktop computers covered by your license. Uploading or using these fonts on cloud-based or server-hosted platforms, including Canva, is not permitted, as this extends the fonts beyond the licensed desktop environment and enables use cases that are not covered by the license terms. The same restriction applies to the other standard license types available for online purchase. However, we would be happy to help you identify the licensing solution that best fits your intended use. Please feel free to contact our [help@myfonts.com](mailto:help@myfonts.com) team for further assistance. Purchasing for a client or third party Be sure to enter your client's name or their company name into the 'License Information' field during the checkout process. This will set the License Owner and will appear on the receipt/invoice. If you\u2019ve made a typo, [help@myfonts.com](mailto:help@myfonts.com) immediately for assistance. Licensing the correct quantity Once a product is added to the cart, the smallest quantity license is added by default. The license quantity can be updated on the cart page by selecting the \u2018update quantity\u2019 option for each item, and following the prompts in the window that appears. Desktop Desktop licenses are based on the number of users of the fonts. Desktop packages will work on both Mac OS X and Windows systems. Desktop licenses are entry-level licenses and are designed to cover the most common graphic design uses, both personal and professional, for use in desktop applications with a font menu. For example: Install the font on your Mac OS X or Windows system Use the font within desktop applications such as Microsoft Word, Mac Pages, Adobe InDesign, Adobe Photoshop, etc. Create and print documents, as well as static images (.jpeg, .tiff, .png), even if the images are used on a website or within a mobile app. However, distribution and embedding of the font is not allowed."
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "first_publication_year",
+              "reasoning": "The Sales Convention JNL listing states \u201cMyFonts debut: Oct 4, 2021,\u201d which supports 2021 as the first publicly documented release year.",
+              "confidence": "high",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/collections/sales-convention-jnl-font-jeff-levine",
+                  "title": "Sales Convention JNL Font | Webfont & Desktop | MyFonts",
+                  "excerpts": [
+                    "The 1937 Electrolux (Eastern) Appreciation Banquet has its own menu cover, and the lettering was in a simple, yet Art-Deco influenced condensed block design with squared features. This simple and quirky typeface has been digitally redrawn as Sales Convention JNL, and is available in both regular and oblique versions. Designers: Jeff Levine Foundry: Jeff Levine MyFonts debut: Oct 4, 2021 Sales Convention JNL About Jeff Levine Jeff Levine has been in love with lettering since the third grade, when a schoolmate brought a lettering stencil into class. He has worked in both the graphics and music industries, and began his work with digital type via his own site, which hosted over one hundred free dingbat fonts until its retirement in 2009."
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "typical_fee_high_usd",
+              "reasoning": "The published 2026 licensing comparison gives a desktop benchmark of US$15\u201380 per weight and states that broadcast/video licensing is commonly one to two times desktop pricing and scales by video-program item. Using the upper end of that stated benchmark produces a prudent high budgeting figure of approximately US$160; it is not a Jeff Levine quotation.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://filmfont.com/articles/desktop-vs-webfont-vs-broadcast-font-license",
+                  "title": "Desktop vs Webfont vs Broadcast Font License (2026): What Creators Need | FilmFont",
+                  "excerpts": [
+                    "$15-80 per weight verified 2026-05-29 Static design and motion-graphic export Standard monetized YouTube and social video Scales with install seats, not audience Webfont Scales with pageviews Live, selectable website text via font-face Does not cover desktop or app use Broadcast / Video Per program item; often 1-2x desktop Television, cable, cinema, large streaming Scales with the number of video items"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "typical_fee_low_usd",
+              "reasoning": "The Sales Convention JNL listing gives a public retail price of US$27.55 per style and US$55.10 for the two-style family. Those are the clearest documented low-end acquisition figures; no audiovisual quote is published.",
+              "confidence": "high",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/collections/sales-convention-jnl-font-jeff-levine",
+                  "title": "Sales Convention JNL Font | Webfont & Desktop | MyFonts",
+                  "excerpts": [
+                    "More about this family Aa Glyphs Best Value Family Packages Individual Styles Tech Specs Licensing Sales Convention JNL Complete Family 2 fonts ### Best Value! Sales Convention JNL Regular Sales Convention JNL Oblique Per Style: $27.55 USD Pack of 2 styles: $55.10 USD Buying Choices Add to Album Add to Favorites Licensing Options Desktop Webfonts App Electronic Doc Digital Ad/Email"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "rights_holders",
+              "reasoning": "The product listing attributes Sales Convention JNL to Jeff Levine as both designer and publisher/foundry. MyFonts\u2019 FAQ identifies MyFonts as the licensing marketplace and publishes help@myfonts.com, supporting its inclusion as a distributor/contact channel rather than as the underlying owner.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/collections/sales-convention-jnl-font-jeff-levine",
+                  "title": "Sales Convention JNL Font | Webfont & Desktop | MyFonts",
+                  "excerpts": [
+                    "Home / Jeff Levine / Sales Convention JNL Sales Convention JNL by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine-foundry?sort_by=price-ascending&pageType=foundryPage) Individual Styles from $29.00 USD Complete family of 2 fonts: $55.10 USD Sales Convention JNL Font Poster 1 Sales Convention JNL Font Poster 2 Sales Convention JNL Font Poster 3 Sales Convention JNL Font Poster 4 Sales Convention JNL Font Poster 5 The Sales Convention JNL Font Family was designed by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine?sort_by=price-ascending&pageType=authorPage) and published by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine-foundry?sort_by=price-ascending&pageType=foundryPage) . Sales Convention JNL contains 2 styles and family package options.",
+                    "The 1937 Electrolux (Eastern) Appreciation Banquet has its own menu cover, and the lettering was in a simple, yet Art-Deco influenced condensed block design with squared features. This simple and quirky typeface has been digitally redrawn as Sales Convention JNL, and is available in both regular and oblique versions. Designers: Jeff Levine Foundry: Jeff Levine MyFonts debut: Oct 4, 2021 Sales Convention JNL About Jeff Levine Jeff Levine has been in love with lettering since the third grade, when a schoolmate brought a lettering stencil into class. He has worked in both the graphics and music industries, and began his work with digital type via his own site, which hosted over one hundred free dingbat fonts until its retirement in 2009."
+                  ]
+                },
+                {
+                  "url": "https://www.myfonts.com/pages/faq",
+                  "title": "FAQ | MyFonts",
+                  "excerpts": [
+                    "Digital Ad/Email Server Billing and payment Quote Payment options Tax and VAT Return a Font Swap a Font Troubleshooting Sign in issues Desktop Webfonts Digital Ads Looks different than what was seen on the website Missing order history Font identification What font is this? \u2014 font identification Font customisation Filter Options Corporate Type download Selling your fonts on MyFonts Answers to most questions can be found on this page. If you don't find what you're looking for, please contact [help@myfonts.com](mailto:help@myfonts.com) . We read every message and will respond within 24 hours \u2014 usually sooner. If you are a foundry, member of the press, or looking for sponsorship information, please go to our contact page . Updated on June 18, 2026. Getting Started To easily utilize every aspect of MyFonts, create a MyFonts account . A MyFonts account is required to place an order \u2014 even for free fonts. Your account A few things you can do with a MyFonts account Download any [900+ free fonts](https://www.myfonts.com/search?product_data%5BsortBy%5D=listing_page_search_price_asc) . Create and share Albums of your favorite fonts. Download an official quote . Receive our newsletters. Download PDF proof of purchase. Download previous orders again from your [Order history & downloads](https://www.myfonts.com/account?view=order-history) page. Updating account information In order update any of the below, please sign in first."
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "public_domain_rationale",
+              "reasoning": "The font listing dates the digital release to 2021 and describes it as a digital redrawing of older lettering. The film archive separately labels the Chevrolet film copy public domain and dates it 1954\u201355. These are distinct assets: public-domain status of the film copy does not eliminate licensing requirements for a later proprietary font used in the new production.",
+              "confidence": "medium",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/collections/sales-convention-jnl-font-jeff-levine",
+                  "title": "Sales Convention JNL Font | Webfont & Desktop | MyFonts",
+                  "excerpts": [
+                    "The 1937 Electrolux (Eastern) Appreciation Banquet has its own menu cover, and the lettering was in a simple, yet Art-Deco influenced condensed block design with squared features. This simple and quirky typeface has been digitally redrawn as Sales Convention JNL, and is available in both regular and oblique versions. Designers: Jeff Levine Foundry: Jeff Levine MyFonts debut: Oct 4, 2021 Sales Convention JNL About Jeff Levine Jeff Levine has been in love with lettering since the third grade, when a schoolmate brought a lettering stencil into class. He has worked in both the graphics and music industries, and began his work with digital type via his own site, which hosted over one hundred free dingbat fonts until its retirement in 2009."
+                  ]
+                },
+                {
+                  "url": "https://archive.org/details/Chevrole1954",
+                  "title": "[Chevrolet Sales Convention Musical] : Handy (Jam) Organization : Free Download, Borrow, and Streaming : Internet Archive",
+                  "excerpts": [
+                    "Chevrolet Sales Convention Musical] by [Handy (Jam) Organization](https://archive.org/search.php?query=creator%3A%22Handy+%28Jam%29+Organization%22) Publication date [1954-55?](https://archive.org/search.php?query=date:1954-55%3F) Usage [Public Domain Creative Commons License publicdomain](http://creativecommons.org/licenses/publicdomain/ \"Public Domain\") Topics ... Rare record of song-and-dance at a Chevrolet sales convention, designed to motivate the sales force. Shotlist Musical stage show opening production number. <BR> Addeddate 2002-07-16 00:00:00 Ccnum asr Closed captioning no Collectionid 10013 Color C Country United States External-identifier"
+                  ]
+                }
+              ]
+            },
+            {
+              "field": "licensing_precedent",
+              "reasoning": "The Sales Convention JNL product listing documents the font\u2019s designer, source inspiration, release date, styles, and retail price, but does not document a film or television placement or fee. The designer-use listing likewise identifies Jeff Levine\u2019s type-design work but supplies no Sales Convention JNL audiovisual precedent. The appropriate conclusion is that no documented precedent was found in the available records, not that no licence has ever occurred.",
+              "confidence": "low",
+              "citations": [
+                {
+                  "url": "https://www.myfonts.com/collections/sales-convention-jnl-font-jeff-levine",
+                  "title": "Sales Convention JNL Font | Webfont & Desktop | MyFonts",
+                  "excerpts": [
+                    "Home / Jeff Levine / Sales Convention JNL Sales Convention JNL by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine-foundry?sort_by=price-ascending&pageType=foundryPage) Individual Styles from $29.00 USD Complete family of 2 fonts: $55.10 USD Sales Convention JNL Font Poster 1 Sales Convention JNL Font Poster 2 Sales Convention JNL Font Poster 3 Sales Convention JNL Font Poster 4 Sales Convention JNL Font Poster 5 The Sales Convention JNL Font Family was designed by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine?sort_by=price-ascending&pageType=authorPage) and published by [Jeff Levine](https://www.myfonts.com/collections/jeff-levine-foundry?sort_by=price-ascending&pageType=foundryPage) . Sales Convention JNL contains 2 styles and family package options. More about this family Aa Glyphs Best Value Family Packages Individual Styles Tech Specs Licensing Sales Convention JNL Complete Family 2 fonts ### Best Value! Sales Convention JNL Regular Sales Convention JNL Oblique Per Style: $27.55 USD Pack of 2 styles: $55.10 USD Buying Choices Add to Album Add to Favorites Licensing Options Desktop Webfonts App Electronic Doc Digital Ad/Email Related Tags About the family * * In its heyday, the Starlight Room of the Waldorf-Astoria in New York City quite frequently printed lunch and dinner menus for not only their rotating bill of fare, but also for special events held there. The 1937 Electrolux (Eastern) Appreciation Banquet has its own menu cover, and the lettering was in a simple, yet Art-Deco influenced condensed block design with squared features. This simple and quirky typeface has been digitally redrawn as Sales Convention JNL, and is available in both regular and oblique versions. Designers: Jeff Levine Foundry: Jeff Levine MyFonts debut: Oct 4, 2021 Sales Convention JNL About Jeff Levine Jeff Levine has been in love with lettering since the third grade, when a schoolmate brought a lettering stencil into class. He has worked in both the graphics and music industries, and began his work with digital type via his own site, which hosted over one hundred free dingbat fonts until its retirement in 2009."
+                  ]
+                },
+                {
+                  "url": "https://fontsinuse.com/type_designers/591/jeff-levine",
+                  "title": "Jeff Levine - Fonts In Use",
+                  "excerpts": [
+                    "Jeff Levine - Fonts In Use Fonts from the type designer \u201cJeff Levine\u201d in use. ... Graphic Design(3120) \u00b7 Health/Fitness(927) \u00b7 Home/Interior(865) \u00b7 Industrial Design(626) \u00b7 Institutional"
+                  ]
+                }
+              ]
+            }
+          ],
+          "provider": "parallel",
+          "processor": "core",
+          "run_id": "trun_0cc180bf4cc74b388a6fbf708c218d8b",
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_3686b64634",
+          "tier": "low",
+          "action": "monitor",
+          "documents": [
+            "font_license"
+          ],
+          "eo_blocking": false,
+          "rationale": "Typeface used in titles or graphics \u2014 confirm the licence covers film and broadcast use.",
+          "fired_rules": [
+            {
+              "rule_id": "FONT-001",
+              "description": "Typeface used in titles or graphics \u2014 confirm the licence covers film and broadcast use."
+            }
+          ],
+          "fee_low_usd": 200.0,
+          "fee_high_usd": 1200.0,
+          "lead_time_days": 5
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_ae6680d3ca",
+          "category": "artwork",
+          "title": "Painted Cityscape Backdrop",
+          "description": "A painted stage backdrop depicts a stylized city skyline with skyscrapers and industrial buildings.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 60,
+          "scene": null,
+          "prominence": "featured",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": true,
+          "detection_confidence": "high",
+          "evidence": "The backdrop is visible behind the dancers throughout the entire performance.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_ae6680d3ca",
+          "researched": false,
+          "applicable": false,
+          "holders": [],
+          "public_domain": null,
+          "public_domain_rationale": null,
+          "first_publication_year": null,
+          "territory_notes": null,
+          "licensing_precedent": null,
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [],
+          "confidence": "low",
+          "basis": [],
+          "provider": "skipped",
+          "processor": null,
+          "run_id": null,
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_ae6680d3ca",
+          "tier": "blocking",
+          "action": "replace_asset",
+          "documents": [],
+          "eo_blocking": true,
+          "rationale": "Artwork is featured and the artist cannot be identified \u2014 it cannot be licensed as shot. Replace it, obscure it, or reshoot.",
+          "fired_rules": [
+            {
+              "rule_id": "ART-002",
+              "description": "Artwork is featured and the artist cannot be identified \u2014 it cannot be licensed as shot. Replace it, obscure it, or reshoot."
+            }
+          ],
+          "fee_low_usd": null,
+          "fee_high_usd": null,
+          "lead_time_days": 7
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_3801fc52f1",
+          "category": "artwork",
+          "title": "Painted Map of the USA",
+          "description": "A large, stylized map of the United States is painted on a raised platform on the stage floor, which is part of the set.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 60,
+          "scene": null,
+          "prominence": "featured",
+          "identifiability": "partial",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": true,
+          "detection_confidence": "high",
+          "evidence": "The map is visible on the stage floor throughout the clip, though details are indistinct.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_3801fc52f1",
+          "researched": false,
+          "applicable": false,
+          "holders": [],
+          "public_domain": null,
+          "public_domain_rationale": null,
+          "first_publication_year": null,
+          "territory_notes": null,
+          "licensing_precedent": null,
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [],
+          "confidence": "low",
+          "basis": [],
+          "provider": "skipped",
+          "processor": null,
+          "run_id": null,
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_3801fc52f1",
+          "tier": "medium",
+          "action": "legal_review",
+          "documents": [],
+          "eo_blocking": false,
+          "rationale": "No rule matched this item. Treated as unresolved pending manual review.",
+          "fired_rules": [
+            {
+              "rule_id": "FALLBACK",
+              "description": "No category rule matched; defaulted to review."
+            }
+          ],
+          "fee_low_usd": null,
+          "fee_high_usd": null,
+          "lead_time_days": null
+        },
+        "outreach_draft": null
+      },
+      {
+        "item": {
+          "id": "itm_1be4fc62e0",
+          "category": "person_likeness",
+          "title": "Female Dance Troupe",
+          "description": "A troupe of approximately a dozen female dancers performs a choreographed routine. Their faces are clearly visible at multiple points.",
+          "source": "video",
+          "start_seconds": 0,
+          "end_seconds": 60,
+          "scene": null,
+          "prominence": "hero",
+          "identifiability": "clearly_identifiable",
+          "audible_in_clear": false,
+          "depicted_negatively": false,
+          "release_on_file": false,
+          "no_published_identity": false,
+          "detection_confidence": "high",
+          "evidence": "The dancers are the main subject of the footage. Their faces are visible in medium shots and close-ups from 0:05 onwards.",
+          "known_work": null,
+          "known_year": null
+        },
+        "finding": {
+          "item_id": "itm_1be4fc62e0",
+          "researched": false,
+          "applicable": false,
+          "holders": [],
+          "public_domain": null,
+          "public_domain_rationale": null,
+          "first_publication_year": null,
+          "territory_notes": null,
+          "licensing_precedent": null,
+          "typical_fee_low_usd": null,
+          "typical_fee_high_usd": null,
+          "unresolved": [],
+          "confidence": "low",
+          "basis": [],
+          "provider": "skipped",
+          "processor": null,
+          "run_id": null,
+          "error": null
+        },
+        "verdict": {
+          "item_id": "itm_1be4fc62e0",
+          "tier": "medium",
+          "action": "obtain_release",
+          "documents": [
+            "appearance_release"
+          ],
+          "eo_blocking": false,
+          "rationale": "Identifiable person on camera \u2014 appearance release required.",
+          "fired_rules": [
+            {
+              "rule_id": "PER-001",
+              "description": "Identifiable person on camera \u2014 appearance release required."
+            }
+          ],
+          "fee_low_usd": null,
+          "fee_high_usd": null,
+          "lead_time_days": 7
+        },
+        "outreach_draft": "To whom it may concern,\n\nWe are writing on behalf of the production 'Chevrolet Sales Convention Musical'. We are requesting a personal appearance release for the individuals depicted in the following material.\n\nThe material appears from 0:00:00\u20130:01:00, for approximately 1 minute. In this scene, a troupe of approximately a dozen female dancers performs a choreographed routine. Their faces are clearly visible at multiple points.\n\nWe seek rights for this usage in perpetuity, for all media, worldwide.\n\nPlease confirm if you are the appropriate party to grant this release. If so, please advise on your fee and any restrictions you may have."
+      }
+    ],
+    "summary": "Ten clearable items have been identified in the 'Chevrolet Sales Convention Musical' excerpt, but three blocking items prevent an errors-and-omissions policy from binding as the cut stands. The estimated licensing exposure is $17,000\u2013$71,500, with a risk profile of 3 blocking, 2 medium, and 5 low items. The longest expected lead time is 45 days, which sets the earliest realistic delivery date.",
+    "error": null,
+    "spotter_model": "gemini-2.5-pro",
+    "research_provider": "parallel",
+    "stage_timings_ms": {
+      "spot": 64045,
+      "research": 952981,
+      "adjudicate": 20,
+      "draft": 30277
+    },
+    "replay_of": null,
+    "replay_recorded_at": null
+  },
+  "events": [
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "spotting",
+      "message": "Watching sample excerpt 3:15-4:15 for third-party material\u2026",
+      "at": "2026-08-24T18:30:21.241678Z",
+      "detail": {},
+      "kind": "stage"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "spotting",
+      "message": "10 item(s) observed in picture.",
+      "at": "2026-08-24T18:31:25.277676Z",
+      "detail": {
+        "count": 10
+      },
+      "kind": "stage"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "spotting",
+      "message": "Cue sheet applied: 1 cue(s) named",
+      "at": "2026-08-24T18:31:25.277882Z",
+      "detail": {
+        "named": 1,
+        "library": 0,
+        "added": 0
+      },
+      "kind": "stage"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "researching",
+      "message": "Researching chain of title for 10 item(s) via parallel\u2026",
+      "at": "2026-08-24T18:31:25.834531Z",
+      "detail": {
+        "provider": "parallel"
+      },
+      "kind": "stage"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "researching",
+      "message": "Unknown 3D Sans-Serif Font \u2192 Jeff Levine",
+      "at": "2026-08-24T18:34:26.483557Z",
+      "detail": {
+        "item_id": "itm_3686b64634",
+        "citations": 14,
+        "confidence": "medium",
+        "unresolved": 4
+      },
+      "kind": "item"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "researching",
+      "message": "Convention Chorus Number \u2192 Unknown composition claimant (not identified)",
+      "at": "2026-08-24T18:41:57.234776Z",
+      "detail": {
+        "item_id": "itm_d224523332",
+        "citations": 0,
+        "confidence": "low",
+        "unresolved": 6
+      },
+      "kind": "item"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "researching",
+      "message": "Chevrolet Sales Convention Musical (1955) \u2192 Prelinger Archives",
+      "at": "2026-08-24T18:47:18.242493Z",
+      "detail": {
+        "item_id": "itm_242214cbde",
+        "citations": 23,
+        "confidence": "medium",
+        "unresolved": 8
+      },
+      "kind": "item"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "adjudicating",
+      "message": "Applying clearance rules\u2026",
+      "at": "2026-08-24T18:47:18.267588Z",
+      "detail": {},
+      "kind": "stage"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "adjudicating",
+      "message": "10 item(s) adjudicated; 3 blocking.",
+      "at": "2026-08-24T18:47:18.286661Z",
+      "detail": {
+        "blocking": 3,
+        "tiers": {
+          "cleared": 0,
+          "low": 5,
+          "medium": 2,
+          "high": 0,
+          "blocking": 3
+        }
+      },
+      "kind": "stage"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "drafting",
+      "message": "Drafting 2 rights request(s)\u2026",
+      "at": "2026-08-24T18:47:18.288313Z",
+      "detail": {
+        "count": 2
+      },
+      "kind": "stage"
+    },
+    {
+      "run_id": "run_990efa379e1d",
+      "stage": "complete",
+      "message": "Ten clearable items have been identified in the 'Chevrolet Sales Convention Musical' excerpt, but three blocking items prevent an errors-and-omissions policy from binding as the cut stands. The estimated licensing exposure is $17,000\u2013$71,500, with a risk profile of 3 blocking, 2 medium, and 5 low items. The longest expected lead time is 45 days, which sets the earliest realistic delivery date.",
+      "at": "2026-08-24T18:47:48.564839Z",
+      "detail": {
+        "eo_ready": false,
+        "blocking": 3
+      },
+      "kind": "done"
+    }
+  ]
+}

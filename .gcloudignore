@@ -1,0 +1,29 @@
+# Uploaded to Cloud Build on `gcloud run deploy --source .`
+# Secrets must never reach the build context — inject them at deploy time with
+# --set-secrets instead.
+.env
+.env.*
+*.env
+gcloud-key.json
+service-account*.json
+
+.git
+.gitignore
+.github
+
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+tests/
+docs/
+media/
+runs/
+uploads/
+live_report.md
+live_run.log
+
+.work/

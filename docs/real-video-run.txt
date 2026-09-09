@@ -1,0 +1,67 @@
+﻿Full pipeline run over real video (Google Pixel 8 reference clip, gs://cloud-samples-data).
+First end-to-end pass on footage the system had never seen: Gemini spotting -> Parallel
+chain-of-title research -> deterministic adjudication. 18 items, 172 cited sources, 410s.
+Recorded 2026-08-10.
+
+research: parallel (live) Â· spotter: gemini-2.5-pro
+
+  spotting      Watching reference clip for third-party materialâ€¦
+  spotting      18 item(s) observed in picture.
+  researching   Researching chain of title for 18 item(s) via parallelâ€¦
+  researching   On-screen title font â†’ Sharp Type Co.
+  researching   Google Pixel 8 Pro (2023) â†’ Google LLC
+  researching   Google Photos â†’ Google LLC
+  researching   Convenience Store Signage â†’ FamilyMart Co., Ltd.
+  researching   Restaurant Signage â†’ Sushi Chisato (é®¨ ã¡ã•ã¨)
+  researching   Hoppy â†’ Asahi Breweries, Ltd.
+  researching   Diary Neon Sign â†’ no owner found
+  researching   Kirin Brewery Company â†’ Kirin Brewery Company, Limited
+  researching   Unnamed electronic score â†’ Unknown â€” composition-side publisher/administrator not identified
+  researching   Circular Neon Skull Sign â†’ Unidentified artist/creator
+  researching   Phone screen recording â†’ Google LLC (unconfirmed as the contracting rights owner)
+  researching   Playboy â†’ Playboy Enterprises International, Inc.
+  researching   Shibuya, Tokyo â†’ Tokyu Corporation
+  researching   Montage of phone footage â†’ Google LLC
+  researching   Cartoon Lampshade â†’ Artist/author and current copyright holder not identified
+  researching   Graffiti Mural with Eyes â†’ Unidentified mural artist(s) / current assignee
+  adjudicating  Applying clearance rulesâ€¦
+  adjudicating  18 item(s) adjudicated; 6 blocking.
+  drafting      Drafting 4 rights request(s)â€¦
+  complete      18 clearable items have been identified in the 'Pixel 8 spot' reference clip, supported by 172 cited sources; however, 6 items would prevent an errors-and-omissions policy from binding as the cut stands. The risk profile includes 6 blocking, 0 high, 2 medium, 8 low, and 2 cleared items, with an estimated licensing exposure of $33,500â€“$183,200 for worldwide, all media, in perpetuity distribution. The longest expected lead time is 45 days, which sets the earliest realistic delivery date.
+
+============================================================================
+ Pixel 8 spot â€” reference clip
+============================================================================
+18 clearable items have been identified in the 'Pixel 8 spot' reference clip, supported by 172 cited sources; however, 6 items would prevent an errors-and-omissions policy from binding as the cut stands. The risk profile includes 6 blocking, 0 high, 2 medium, 8 low, and 2 cleared items, with an estimated licensing exposure of $33,500â€“$183,200 for worldwide, all media, in perpetuity distribution. The longest expected lead time is 45 days, which sets the earliest realistic delivery date.
+
+ BLOCKING  Unnamed electronic score               0:00:00â€“0:00:57        legal review
+           â†³ Identity gap: the supplied material has no title, composer, artist, publisher, recording
+ BLOCKING  Phone screen recording                 0:00:19â€“0:00:21        legal review
+           â†³ Source-identity gap: the supplied metadata contains no original file, URL, production co
+ BLOCKING  Circular Neon Skull Sign               0:00:31â€“0:00:32        replace asset
+           â†³ The supplied input contains no frame, image URL, title, maker mark, or production-art/pr
+ BLOCKING  Graffiti Mural with Eyes               0:00:41â€“0:00:43        legal review
+           â†³ The supplied description and timecode do not uniquely identify the mural: no source loca
+ BLOCKING  Cartoon Lampshade                      0:00:44â€“0:00:45        replace asset
+           â†³ The supplied 'Pixel 8 spot' is not uniquely identified. A 60-second upload titled 'Googl
+ BLOCKING  Montage of phone footage               0:00:48â€“0:00:52        legal review
+           â†³ Source-identification gap: no source file, title, episode/film name, URL, or frame-accur
+ MEDIUM    Google Pixel 8 Pro (2023)              0:00:13â€“0:00:21        obtain release
+ MEDIUM    Shibuya, Tokyo                         0:00:53â€“0:00:57        obtain release
+ LOW       Convenience Store Signage              0:00:00â€“0:00:01        no action
+ LOW       On-screen title font                   0:00:01â€“0:00:04        monitor
+           â†³ Exact typeface used not identified; cannot determine first publication year, typical fee
+ LOW       Google Photos                          0:00:15â€“0:00:21        no action
+ LOW       Restaurant Signage                     0:00:21â€“0:00:23        no action
+           â†³ Sign designer not identified; chain of title for the graphic design of the sign is incom
+ LOW       Hoppy                                  0:00:26â€“0:00:28        no action
+ LOW       Diary Neon Sign                        0:00:26â€“0:00:28        no action
+           â†³ No identifiable rights holder for the physical neon sign (maker/vendor unknown).
+ LOW       Kirin Brewery Company                  0:00:28â€“0:00:30        no action
+ LOW       Playboy                                0:00:49â€“0:00:49        no action
+ CLEARED   Male cyclist                           0:00:01â€“0:00:02        no action
+ CLEARED   Group on Overpass                      0:00:55â€“0:00:57        no action
+
+ 18 items Â· 6 blocking Â· $33,500â€“$183,200 Â· 172 sources cited Â· E&O ready: False
+
+

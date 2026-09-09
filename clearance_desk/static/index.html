@@ -1,0 +1,1486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clearance Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   Clearance Desk
+   The workspace is an instrument: dark, dense, timecode-forward,
+   because clearance happens in edit suites. The report is paper.
+   Data is set in Courier Prime — the screenplay font.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root{
+  /* Two type families, not three. The serif display face is gone: headings
+     take their authority from size and tracking instead. Courier Prime stays,
+     because timecode, money and citations have to align in a column and the
+     screenplay font is the one the room already reads. */
+  --sans:"Archivo","Helvetica Neue",sans-serif;
+  --mono:"Courier Prime",ui-monospace,Consolas,monospace;
+  --display:var(--sans);
+
+  --ink:#0b0b0d;
+  --panel:#131317;
+  --panel-2:#1a1a20;
+  --panel-3:#1a1a20;
+  --rule:#26262e;
+  --rule-soft:#1c1c23;
+
+  --text:#ecebe7;
+  --text-2:#9b99a2;
+  --text-3:#66646e;
+
+  /* One accent, three states. Five graded risk hues meant the eye had to
+     learn a scale before it could read the report; now a row is either
+     stopped, unfinished, or done, and the tier word carries the nuance. */
+  --brass:#c8a04a;
+  --brass-dim:#8a6f34;
+
+  --blocking:#d4503c;
+  --high:#e08a3c;
+  --medium:#e08a3c;
+  --low:#9b99a2;
+  --cleared:#4f9576;
+
+  --gutter:26px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;background:var(--ink);color:var(--text);
+  font-family:var(--sans);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  /* faint grain, so flat panels read as material rather than blocks */
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.014) 1px,transparent 0);
+  background-size:3px 3px;
+}
+button,input,select{font-family:inherit;font-size:inherit}
+button{cursor:pointer}
+a{color:var(--brass);text-underline-offset:2px}
+::selection{background:var(--brass);color:#17130a}
+
+/* ── scrollbars ─────────────────────────────────────────── */
+*::-webkit-scrollbar{width:9px;height:9px}
+*::-webkit-scrollbar-track{background:transparent}
+*::-webkit-scrollbar-thumb{background:#2a2a33;border-radius:0}
+*::-webkit-scrollbar-thumb:hover{background:#3a3a46}
+
+/* ── shell ──────────────────────────────────────────────── */
+.shell{display:flex;flex-direction:column;height:100vh;min-height:0}
+
+header{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  padding:0 var(--gutter);height:58px;flex:none;
+  border-bottom:1px solid var(--rule);background:var(--panel);
+}
+.brand{display:flex;align-items:baseline;gap:11px}
+.brand .mark{
+  width:9px;height:9px;flex:none;background:var(--brass);
+  transform:rotate(45deg);align-self:center;
+}
+.brand h1{
+  margin:0;font-family:var(--display);font-size:20px;font-weight:500;
+  letter-spacing:-.012em;
+}
+.brand .sub{
+  font-family:var(--mono);font-size:10px;color:var(--text-3);
+  letter-spacing:.18em;text-transform:uppercase;
+}
+.spacer{flex:1}
+
+.env{display:flex;gap:0;flex-wrap:wrap;border:1px solid var(--rule-soft)}
+.chip{
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 10px;color:var(--text-3);white-space:nowrap;
+  border-right:1px solid var(--rule-soft);
+}
+.chip:last-child{border-right:0}
+.chip b{color:var(--text-2);font-weight:400}
+.chip.on{color:var(--cleared)}
+.chip.off{color:var(--medium)}
+
+.btn{
+  border:1px solid var(--rule);background:transparent;color:var(--text-2);
+  padding:8px 15px;font-size:12px;font-weight:500;letter-spacing:.04em;
+  transition:border-color .14s,color .14s,background .14s;
+}
+.btn:hover:not(:disabled){border-color:var(--text-3);color:var(--text);background:var(--panel-2)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn.primary{background:var(--brass);border-color:var(--brass);color:#17130a;font-weight:600}
+.btn.primary:hover:not(:disabled){background:#d9b25c;border-color:#d9b25c;color:#17130a}
+
+/* ── verdict band: the one thing you remember ───────────── */
+.verdict{
+  flex:none;padding:20px var(--gutter) 18px;background:var(--panel);
+  border-bottom:1px solid var(--rule);position:relative;overflow:hidden;
+}
+.verdict::after{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--text-3);
+  transition:background .3s;
+}
+.verdict.blocked::after{background:var(--blocking)}
+.verdict.ready::after{background:var(--cleared)}
+.verdict-inner{display:flex;align-items:flex-end;gap:34px;flex-wrap:wrap}
+.verdict-main{min-width:min(100%,420px);flex:1}
+.slug{
+  font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:7px;display:flex;align-items:center;gap:9px;
+}
+.slug .lamp{width:6px;height:6px;border-radius:50%;background:var(--text-3);flex:none}
+.verdict.blocked .lamp{background:var(--blocking);box-shadow:0 0 0 3px rgba(214,74,55,.16)}
+.verdict.ready .lamp{background:var(--cleared);box-shadow:0 0 0 3px rgba(79,149,118,.16)}
+.verdict h2{
+  margin:0;font-family:var(--display);font-size:clamp(24px,3.2vw,34px);
+  font-weight:300;letter-spacing:-.022em;
+  font-weight:400;line-height:1.08;letter-spacing:-.005em;
+}
+.verdict.blocked h2{color:#f0d5cf}
+.verdict.ready h2{color:#d2e6dc}
+.verdict .plain{
+  margin-top:9px;font-size:14px;color:var(--text-2);max-width:62ch;line-height:1.55;
+}
+
+.figures{display:flex;gap:0;border:1px solid var(--rule-soft);flex-wrap:wrap}
+.fig{padding:9px 16px;border-right:1px solid var(--rule-soft);min-width:82px}
+.fig:last-child{border-right:0}
+.fig .k{
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-3);display:block;margin-bottom:3px;
+}
+.fig .v{font-family:var(--mono);font-size:17px;font-variant-numeric:tabular-nums;color:var(--text)}
+.fig .v.alarm{color:var(--blocking)}
+.fig .v.good{color:var(--cleared)}
+.fig .v small{font-size:11px;color:var(--text-3)}
+
+/* ── timeline ───────────────────────────────────────────── */
+.reel{flex:none;padding:16px var(--gutter);border-bottom:1px solid var(--rule);background:var(--panel-2)}
+.reel-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  font-family:var(--mono);font-size:10px;color:var(--text-3);
+  letter-spacing:.1em;margin-bottom:8px;text-transform:uppercase;
+}
+.reel-head .title{color:var(--text-2);letter-spacing:.04em;text-transform:none;font-size:11.5px}
+.track{
+  position:relative;height:46px;background:var(--ink);
+  border:1px solid var(--rule-soft);
+  /* sprocket-hole rhythm, like film leader */
+  background-image:repeating-linear-gradient(90deg,transparent 0 39px,rgba(255,255,255,.028) 39px 40px);
+}
+/* Scoped to the reel. Unscoped, this also matched the brand diamond in the
+   header — which inherits nothing from here but position:absolute, and so
+   escaped the header and stretched down the left edge of the page. */
+#track .mark{
+  position:absolute;top:5px;bottom:5px;min-width:3px;cursor:pointer;
+  opacity:.8;transition:opacity .12s,transform .12s;
+}
+#track .mark:hover{opacity:1;transform:scaleY(1.14)}
+#track .mark.sel{opacity:1;transform:scaleY(1.2);box-shadow:0 0 0 1px rgba(255,255,255,.5)}
+#track .mark.blocking{background:var(--blocking)}
+#track .mark.high{background:var(--high)}
+#track .mark.medium{background:var(--medium)}
+#track .mark.low{background:var(--low)}
+#track .mark.cleared{background:var(--cleared)}
+.legend{display:flex;gap:15px;margin-top:9px;flex-wrap:wrap}
+.legend span{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);display:flex;align-items:center;gap:6px;
+}
+.legend i{width:8px;height:8px;display:inline-block}
+
+/* ── body ───────────────────────────────────────────────── */
+.body{display:grid;grid-template-columns:minmax(340px,0.85fr) minmax(430px,1.15fr);flex:1;min-height:0}
+.col{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.col.left{border-right:1px solid var(--rule)}
+.col-head{
+  position:sticky;top:0;z-index:3;background:var(--panel);
+  border-bottom:1px solid var(--rule);padding:10px var(--gutter);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.col-head .label{
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.filters{display:flex;gap:0;margin-left:auto;border:1px solid var(--rule-soft)}
+.filters button{
+  background:transparent;border:0;border-right:1px solid var(--rule-soft);
+  color:var(--text-3);font-family:var(--mono);font-size:10px;
+  letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;
+}
+.filters button:last-child{border-right:0}
+.filters button:hover{color:var(--text-2)}
+.filters button.on{background:var(--panel-3);color:var(--brass)}
+
+.group-head{
+  padding:14px var(--gutter) 7px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);
+  border-bottom:1px solid var(--rule-soft);background:var(--panel-2);
+  position:sticky;top:41px;z-index:2;
+}
+.group-head b{color:var(--text-2);font-weight:400}
+
+.row{
+  display:grid;grid-template-columns:3px 1fr auto;gap:14px;align-items:start;
+  padding:13px var(--gutter) 13px calc(var(--gutter) - 8px);
+  border-bottom:1px solid var(--rule-soft);cursor:pointer;
+  transition:background .1s;
+}
+.row:hover{background:var(--panel-2)}
+.row.sel{background:var(--panel-3)}
+.rail{align-self:stretch;min-height:36px}
+.rail.blocking{background:var(--blocking)}
+.rail.high{background:var(--high)}
+.rail.medium{background:var(--medium)}
+.rail.low{background:var(--low)}
+.rail.cleared{background:var(--cleared)}
+.row .name{font-size:14px;font-weight:600;letter-spacing:-.003em}
+.row .meta{
+  font-family:var(--mono);font-size:10.5px;color:var(--text-3);
+  margin-top:4px;display:flex;gap:12px;flex-wrap:wrap;
+}
+.row .meta .tc{color:var(--text-2)}
+.row .todo{
+  text-align:right;font-size:11px;color:var(--text-2);white-space:nowrap;
+  max-width:130px;line-height:1.35;
+}
+.row .cites{
+  font-family:var(--mono);font-size:9.5px;color:var(--text-3);margin-top:3px;
+}
+
+/* ── detail ─────────────────────────────────────────────── */
+.detail{padding:24px var(--gutter) 60px}
+.detail .eyebrow{
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:8px;
+}
+.detail h2{
+  margin:0 0 6px;font-family:var(--display);font-size:25px;font-weight:300;
+  letter-spacing:-.018em;
+  line-height:1.12;letter-spacing:-.008em;
+}
+.detail .where{font-family:var(--mono);font-size:12px;color:var(--text-2);margin-bottom:20px}
+.detail .where .sep{color:var(--text-3);margin:0 8px}
+
+.position{
+  border:1px solid var(--rule);border-left-width:3px;padding:14px 17px;margin-bottom:22px;
+  background:var(--panel-2);
+}
+.position.blocking{border-left-color:var(--blocking)}
+.position.high{border-left-color:var(--high)}
+.position.medium{border-left-color:var(--medium)}
+.position.low{border-left-color:var(--low)}
+.position.cleared{border-left-color:var(--cleared)}
+.position .verdict-line{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.position.blocking .verdict-line{color:var(--blocking)}
+.position.high .verdict-line{color:var(--high)}
+.position.medium .verdict-line{color:var(--medium)}
+.position.low .verdict-line{color:var(--low)}
+.position.cleared .verdict-line{color:var(--cleared)}
+.position p{margin:0;font-size:14px;line-height:1.6;color:var(--text)}
+.position .do{
+  margin-top:12px;padding-top:11px;border-top:1px solid var(--rule);
+  font-size:13.5px;color:var(--text-2);
+}
+.position .do b{color:var(--text);font-weight:600}
+
+.sec{margin-bottom:26px}
+.sec > h3{
+  margin:0 0 11px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text-3);font-weight:400;
+  padding-bottom:7px;border-bottom:1px solid var(--rule-soft);
+}
+.sec p{margin:0 0 9px;font-size:13.5px;line-height:1.6}
+.muted{color:var(--text-2)}
+
+.facts{display:grid;grid-template-columns:auto 1fr;gap:7px 20px;font-size:13px}
+.facts dt{color:var(--text-3);font-size:12px}
+.facts dd{margin:0;font-family:var(--mono);font-size:12.5px}
+
+.holder{border:1px solid var(--rule-soft);padding:12px 14px;margin-bottom:8px;background:var(--panel-2)}
+.holder .hn{font-weight:600;font-size:13.5px}
+.holder .hr{
+  font-family:var(--mono);font-size:10.5px;color:var(--text-3);
+  margin-top:3px;letter-spacing:.05em;text-transform:uppercase;
+}
+.holder .hnote{font-size:12.5px;color:var(--text-2);margin-top:7px;line-height:1.5}
+
+.gap{
+  border-left:2px solid var(--blocking);background:rgba(214,74,55,.055);
+  padding:10px 14px;margin-bottom:7px;font-size:13px;line-height:1.55;
+}
+
+.cite{border-bottom:1px solid var(--rule-soft);padding:12px 0}
+.cite:last-child{border-bottom:0}
+.cite .field{
+  font-family:var(--mono);font-size:10.5px;color:var(--brass);
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+}
+.cite .why{font-size:12.5px;color:var(--text-2);margin:6px 0;line-height:1.55}
+.cite blockquote{
+  margin:7px 0 0;padding:8px 13px;border-left:2px solid var(--rule);
+  background:var(--panel-2);font-size:12.5px;color:var(--text-2);
+  font-family:var(--display);font-size:13px;font-weight:400;line-height:1.5;
+}
+.cite a{font-size:12px;word-break:break-word}
+.conf{
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 7px;border:1px solid var(--rule);color:var(--text-3);
+}
+.conf.high{color:var(--cleared);border-color:#2a5745}
+.conf.medium{color:var(--medium);border-color:#4d3f1e}
+.conf.low{color:var(--blocking);border-color:#5c2b22}
+
+.rules{display:flex;gap:7px;flex-wrap:wrap}
+.rule{
+  font-family:var(--mono);font-size:10.5px;padding:4px 9px;border:1px solid var(--rule);
+  color:var(--text-2);background:var(--panel-2);cursor:help;position:relative;
+}
+.rule:hover{border-color:var(--brass);color:var(--brass)}
+
+pre.draft{
+  margin:0;padding:16px 18px;background:var(--panel-2);border:1px solid var(--rule-soft);
+  font-family:var(--mono);font-size:12px;line-height:1.65;white-space:pre-wrap;
+  color:var(--text-2);max-height:340px;overflow:auto;
+}
+.copy{margin-top:9px}
+
+/* ── glossary ───────────────────────────────────────────── */
+.term{
+  border-bottom:1px dotted var(--text-3);cursor:help;position:relative;
+}
+.term::after{
+  content:attr(data-tip);position:absolute;left:0;bottom:calc(100% + 8px);
+  width:max-content;max-width:290px;padding:9px 12px;background:var(--panel-3);
+  border:1px solid var(--rule);color:var(--text-2);font-size:12px;
+  font-family:var(--sans);line-height:1.5;letter-spacing:0;text-transform:none;
+  opacity:0;pointer-events:none;transition:opacity .14s;z-index:20;
+  box-shadow:0 8px 26px rgba(0,0,0,.55);
+}
+.term:hover::after{opacity:1}
+
+/* ── stages ─────────────────────────────────────────────── */
+.stage{flex:1;min-height:0;overflow-y:auto}
+.start-inner{max-width:760px;margin:0 auto;padding:46px var(--gutter) 80px}
+.lede{
+  font-family:var(--display);font-size:19px;font-weight:300;letter-spacing:-.012em;
+  line-height:1.6;color:var(--text-2);
+  margin:0 0 40px;max-width:60ch;
+}
+.steps{display:flex;flex-direction:column;gap:34px}
+.step{display:grid;grid-template-columns:34px 1fr;gap:18px;align-items:start}
+.num{
+  width:30px;height:30px;border:1px solid var(--rule);color:var(--text-3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:13px;margin-top:2px;
+}
+.step.done .num{border-color:var(--cleared);color:var(--cleared)}
+.step-body h3{
+  margin:0 0 12px;font-size:16px;font-weight:600;letter-spacing:-.005em;
+}
+.step-body h3 em{font-style:normal;font-weight:400;color:var(--text-3);font-size:13.5px}
+.hint{font-size:12.5px;color:var(--text-3);line-height:1.55;margin:10px 0 0}
+
+.go{display:flex;align-items:center;gap:18px;margin-top:40px;flex-wrap:wrap}
+.btn.big{padding:13px 30px;font-size:14px}
+.orline{
+  display:flex;align-items:center;gap:16px;margin:34px 0 22px;
+  color:var(--text-3);font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+}
+.orline::before,.orline::after{content:"";height:1px;background:var(--rule);flex:1}
+.example{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+
+/* ── running ────────────────────────────────────────────── */
+.run-inner{max-width:640px;margin:0 auto;padding:80px var(--gutter)}
+.pulse{
+  width:11px;height:11px;background:var(--brass);transform:rotate(45deg);
+  margin-bottom:24px;animation:beat 1.5s ease-in-out infinite;
+}
+@keyframes beat{0%,100%{opacity:.25;transform:rotate(45deg) scale(.85)}50%{opacity:1;transform:rotate(45deg) scale(1.15)}}
+.run-inner h2{font-family:var(--display);font-size:27px;font-weight:300;
+  letter-spacing:-.02em;margin:0 0 8px}
+.steps-live{margin-top:34px;display:flex;flex-direction:column;gap:2px}
+.steps-live div{
+  font-family:var(--mono);font-size:12.5px;color:var(--text-2);
+  padding:9px 0;border-bottom:1px solid var(--rule-soft);display:flex;gap:14px;
+  animation:rise .3s backwards;
+}
+.steps-live div .st{color:var(--text-3);min-width:104px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:2px}
+.steps-live div.done{color:var(--cleared)}
+.steps-live div.error{color:var(--blocking)}
+
+.drop{
+  position:relative;border:1px dashed #33333f;padding:26px;text-align:center;
+  cursor:pointer;transition:border-color .14s,background .14s;
+}
+.drop:hover,.drop.over{border-color:var(--brass);background:rgba(200,160,74,.04)}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.drop strong{display:block;font-size:14px;font-weight:600}
+.drop span{
+  display:block;margin-top:5px;font-family:var(--mono);font-size:10.5px;color:var(--text-3);
+  letter-spacing:.06em;
+}
+.cue-pick{position:relative;cursor:pointer;white-space:nowrap;display:inline-block}
+.cue-pick input{position:absolute;inset:0;opacity:0;width:100%;cursor:pointer}
+.cue-pick span{
+  display:inline-block;padding:8px 14px;border:1px dashed #33333f;
+  font-size:12.5px;color:var(--text-2);transition:border-color .14s,color .14s;
+}
+.cue-pick:hover span{border-color:var(--brass);color:var(--text)}
+.cue-pick span.set{border-style:solid;border-color:var(--cleared);color:var(--cleared)}
+.fields{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap}
+.fields label{
+  display:flex;flex-direction:column;gap:6px;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.fields input,.fields select{
+  background:var(--ink);border:1px solid var(--rule);color:var(--text);
+  padding:8px 11px;font-family:var(--sans);font-size:13px;min-width:200px;
+}
+.fields input:focus,.fields select:focus{outline:none;border-color:var(--brass)}
+.hint.error{color:var(--blocking)}
+
+/* ── replay notice ──────────────────────────────────────── */
+#replay{
+  display:none;flex:none;padding:11px var(--gutter);background:rgba(200,160,74,.06);
+  border-bottom:1px solid var(--rule);font-size:12.5px;color:var(--text-2);line-height:1.5;
+}
+#replay b{color:var(--brass);font-weight:600}
+#replay code{font-family:var(--mono);font-size:11.5px;color:var(--text-3)}
+
+/* ── log ────────────────────────────────────────────────── */
+.log-wrap{flex:none;border-top:1px solid var(--rule);background:var(--panel)}
+.log-bar{
+  display:flex;align-items:center;gap:12px;padding:8px var(--gutter);cursor:pointer;
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.log-bar:hover{color:var(--text-2)}
+.log-bar .now{
+  margin-left:auto;text-transform:none;letter-spacing:0;font-size:11.5px;color:var(--text-2);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60%;
+}
+.log-bar .caret{transition:transform .18s}
+.log-wrap.open .caret{transform:rotate(90deg)}
+.log{display:none;font-family:var(--mono);font-size:11.5px;padding:0 var(--gutter) 14px;max-height:230px;overflow-y:auto}
+.log-wrap.open .log{display:block}
+.log div{padding:2.5px 0;display:flex;gap:14px;color:var(--text-2)}
+.log .st{color:var(--text-3);min-width:104px;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;padding-top:2px}
+.log .item{color:var(--text)}
+.log .error{color:var(--blocking)}
+.log .done{color:var(--cleared)}
+
+/* ── empty ──────────────────────────────────────────────── */
+.empty{padding:66px var(--gutter);text-align:center;color:var(--text-3);max-width:520px;margin:0 auto}
+.empty h3{
+  font-family:var(--display);font-size:21px;font-weight:300;letter-spacing:-.016em;color:var(--text-2);
+  margin:0 0 12px;letter-spacing:0;text-transform:none;
+}
+.empty p{font-size:13.5px;line-height:1.65;margin:0}
+.foot{
+  flex:none;padding:11px var(--gutter);border-top:1px solid var(--rule);
+  background:var(--panel);font-size:11.5px;color:var(--text-3);line-height:1.5;
+}
+
+/* ── entrance ───────────────────────────────────────────── */
+@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.rise{animation:rise .34s cubic-bezier(.2,.7,.3,1) backwards}
+
+@media(max-width:940px){
+  .body{grid-template-columns:1fr}
+  .col.left{border-right:0;border-bottom:1px solid var(--rule);max-height:46vh}
+  .verdict-inner{gap:20px}
+}
+
+/* ── the finding, stated before the gap ─────────────────── */
+.found{
+  display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;
+  margin:14px 0 0;padding:10px 13px;
+  background:var(--panel-2);border-left:2px solid var(--cleared);
+}
+.found-k{
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.found-v{font-size:13px;color:var(--text);line-height:1.45}
+
+/* ── sample gallery ─────────────────────────────────────────
+   A tester arriving with no footage is the common case, not the
+   edge case, so this sits above the upload steps rather than
+   below them. */
+.samples{margin:0 0 34px}
+.samples-head{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding-bottom:10px;margin-bottom:16px;border-bottom:1px solid var(--rule-soft);
+}
+.samples-head h3{
+  margin:0;font-size:13px;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--text-2);
+}
+.samples-head .hint{margin:0}
+.sample-grid{
+  display:grid;gap:12px;
+  grid-template-columns:repeat(auto-fill,minmax(196px,1fr));
+}
+.card{
+  display:flex;flex-direction:column;text-align:left;
+  border:1px solid var(--rule);background:var(--panel);
+  padding:0;overflow:hidden;color:inherit;
+  transition:border-color .14s,background .14s,transform .14s;
+}
+.card:hover:not(:disabled){
+  border-color:var(--brass-dim);background:var(--panel-2);transform:translateY(-2px);
+}
+.card:focus-visible{outline:2px solid var(--brass);outline-offset:-2px}
+.card:disabled{opacity:.45;cursor:progress}
+.card .thumb{
+  position:relative;aspect-ratio:4/3;background:#000;
+  border-bottom:1px solid var(--rule-soft);
+}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.9)}
+.card .dur{
+  position:absolute;right:6px;bottom:6px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+  background:rgba(8,8,10,.82);color:var(--text-2);padding:2px 5px;
+}
+.card .body{padding:11px 12px 12px;display:flex;flex-direction:column;gap:5px;flex:1}
+.card .t{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+.card .meta{
+  font-family:var(--mono);font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.card .ex{font-size:11.5px;line-height:1.5;color:var(--text-2);flex:1}
+.card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 6px;border:1px solid var(--rule);color:var(--text-3);
+}
+.tag.free{color:var(--cleared);border-color:#2c4a3d}
+.tag.bill{color:var(--high);border-color:#4a3620}
+
+/* ── spend gate ─────────────────────────────────────────────
+   Research is billed per request, so every path that reaches the
+   Task API stops here first. The confirming button is never the
+   default: focus lands on Cancel, Enter cancels, Escape cancels,
+   and the backdrop cancels. A stray click cannot spend money. */
+.gate{
+  position:fixed;inset:0;z-index:60;display:flex;
+  align-items:center;justify-content:center;padding:24px;
+  background:rgba(6,6,8,.74);
+}
+.gate[hidden]{display:none}
+.gate-card{
+  width:min(520px,100%);background:var(--panel-2);
+  border:1px solid var(--rule);
+  box-shadow:0 24px 60px rgba(0,0,0,.55);
+}
+.gate-head{
+  padding:18px 22px 0;
+}
+.gate-head .kicker{
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass);
+}
+.gate-head h3{
+  margin:8px 0 0;font-family:var(--display);font-size:21px;font-weight:300;letter-spacing:-.016em;
+}
+.gate-body{padding:12px 22px 0;color:var(--text-2);font-size:13px;line-height:1.62}
+.gate-body p{margin:0 0 10px}
+.gate-cost{
+  display:flex;align-items:baseline;gap:10px;margin:14px 0 4px;
+  padding:11px 14px;background:var(--panel-3);border-left:2px solid var(--brass);
+}
+.gate-cost .k{
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-3);
+}
+.gate-cost .v{font-family:var(--mono);font-size:15px;color:var(--text)}
+.gate-foot{
+  display:flex;justify-content:flex-end;gap:10px;
+  padding:18px 22px 20px;
+}
+.gate-foot .btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header>
+    <div class="brand">
+      <span class="mark"></span>
+      <h1>Clearance Desk</h1>
+      <span class="sub">rights clearance for picture</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="env" id="env"></div>
+    <button class="btn" id="btn-new" hidden>New analysis</button>
+    <button class="btn primary" id="btn-md" hidden>Export report</button>
+  </header>
+
+  <!-- ── START ─────────────────────────────────────────────────── -->
+  <div class="stage" id="start">
+    <div class="start-inner">
+      <p class="lede">
+        Every film needs proof of permission for its music, brands, artwork and
+        faces before it can be insured and sold. This watches your cut, finds
+        them, works out who owns each one, and shows you the sources.
+      </p>
+
+      <div class="samples" id="samples" hidden>
+        <div class="samples-head">
+          <h3>Try a sample cut</h3>
+          <span class="hint">No upload needed. Sixty seconds of public-domain film, chosen because a lot is going on in it.</span>
+        </div>
+        <div class="sample-grid" id="sample-grid"></div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <div class="step-body">
+            <h3>Add your cut</h3>
+            <div class="drop" id="drop">
+              <input type="file" id="file" accept="video/mp4,video/quicktime,video/webm,.mp4,.mov,.webm,.mkv">
+              <strong id="drop-label">Drop a video here, or click to choose</strong>
+              <span id="drop-hint">mp4 · mov · webm · mkv</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div class="step-body">
+            <h3>Add your cue sheet <em>— optional, but worth it</em></h3>
+            <label class="cue-pick">
+              <input type="file" id="cuefile" accept=".csv,.tsv,.txt,text/csv">
+              <span id="cue-label">Choose a CSV</span>
+            </label>
+            <p class="hint" id="cue-note">
+              Your music editor's list of every cue. It settles what the music is,
+              instead of the system guessing from the audio — and saves a paid
+              lookup on every cue it covers.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div class="step-body">
+            <h3>Tell it about the release</h3>
+            <div class="fields">
+              <label>Production <input type="text" id="f-title" value="Untitled"></label>
+              <label>Which cut <input type="text" id="f-cut" value="rough cut v1"></label>
+              <label>Rights you need
+                <select id="f-intent">
+                  <option value="worldwide, all media, in perpetuity">Worldwide, all media, forever</option>
+                  <option value="festival only">Festivals only</option>
+                  <option value="domestic, single territory">One country</option>
+                  <option value="educational, non-theatrical">Educational / non-theatrical</option>
+                </select>
+              </label>
+            </div>
+            <p class="hint">Festival-only clearance costs a fraction of worldwide, so this
+               changes every estimate below.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="go">
+        <button class="btn primary big" id="btn-analyse" disabled>Analyse this cut</button>
+        <span class="hint" id="upload-warn">Add a video to begin.</span>
+      </div>
+
+      <div class="orline"><span>or</span></div>
+      <div class="example">
+        <button class="btn" id="btn-run">See a worked example</button>
+        <span class="hint">A finished report for a fictional feature — no upload, nothing billed.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RUNNING ───────────────────────────────────────────────── -->
+  <div class="stage" id="running" hidden>
+    <div class="run-inner">
+      <div class="pulse"></div>
+      <h2 id="run-head">Watching your cut…</h2>
+      <p class="hint" id="run-sub">This takes a few minutes. Each stage appears below as it finishes.</p>
+      <div class="steps-live" id="steps-live"></div>
+    </div>
+  </div>
+
+  <div id="replay"></div>
+
+  <div id="results" hidden>
+  <div class="verdict idle" id="verdict">
+    <div class="verdict-inner">
+      <div class="verdict-main">
+        <div class="slug"><span class="lamp"></span><span id="slug-text">No run yet</span></div>
+        <h2 id="verdict-head">Nothing analysed</h2>
+        <p class="plain" id="verdict-plain">
+          Run the worked example to see a reel of an independent feature taken from
+          picture to a clearance position, with the chain of title behind every call.
+        </p>
+      </div>
+      <div class="figures" id="figures"></div>
+    </div>
+  </div>
+
+  <div class="reel" id="reel" style="display:none">
+    <div class="reel-head">
+      <span id="tl-start">0:00:00</span>
+      <span class="title" id="tl-title"></span>
+      <span id="tl-end"></span>
+    </div>
+    <div class="track" id="track"></div>
+    <!-- Four entries, not five: high and medium share one colour now, and two
+         legend rows with the same swatch teach the reader nothing. The wording
+         matches the headings the schedule already groups by. -->
+    <div class="legend">
+      <span><i style="background:var(--blocking)"></i>blocks delivery</span>
+      <span><i style="background:var(--high)"></i>needs attention</span>
+      <span><i style="background:var(--low)"></i>low risk</span>
+      <span><i style="background:var(--cleared)"></i>cleared</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="col left">
+      <div class="col-head">
+        <span class="label">Schedule</span>
+        <span class="label" id="item-count"></span>
+        <div class="filters" id="filters">
+          <button data-f="all" class="on">All</button>
+          <button data-f="blocking">Blocking</button>
+          <button data-f="todo">To do</button>
+          <button data-f="clear">Cleared</button>
+        </div>
+      </div>
+      <div id="items">
+        <div class="empty">
+          <h3>Nothing loaded</h3>
+          <p>Every film needs proof of permission for its music, brands, artwork and
+             faces before it can be insured and sold. This finds them, works out who
+             owns them, and shows you the sources.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col right">
+      <div class="col-head"><span class="label" id="detail-head">Detail</span></div>
+      <div id="detail">
+        <div class="empty">
+          <p>Select an item to see who owns it, what the sources actually say, and
+             which rules produced its position.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /results -->
+
+  <div class="log-wrap" id="log-wrap">
+    <div class="log-bar" id="log-bar">
+      <span class="caret">▸</span><span>Activity</span>
+      <span class="now" id="log-now">idle</span>
+    </div>
+    <div class="log" id="log"></div>
+  </div>
+
+  <div class="foot">
+    A research and triage instrument for a production's clearance workflow.
+    Not legal advice; does not replace review by a clearance attorney.
+  </div>
+</div>
+
+<!-- ── spend gate ─────────────────────────────────────────────── -->
+<div class="gate" id="gate" hidden role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-card">
+    <div class="gate-head">
+      <div class="kicker" id="gate-kicker">This spends money</div>
+      <h3 id="gate-title">Run live?</h3>
+    </div>
+    <div class="gate-body" id="gate-body"></div>
+    <div class="gate-cost">
+      <span class="k">estimated</span><span class="v" id="gate-cost">—</span>
+      <span class="k" id="gate-cost-note"></span>
+    </div>
+    <div class="gate-foot">
+      <button class="btn" id="gate-cancel">Cancel</button>
+      <button class="btn primary" id="gate-go">Run it live</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const human = s => String(s ?? "").replace(/_/g," ");
+const tc = sec => {
+  if (sec === null || sec === undefined) return "—";
+  const h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60), s=Math.floor(sec%60);
+  return `${h}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+};
+/* Grouping is pinned to en-US: an unqualified toLocaleString() follows the
+   viewer's locale, which rendered $193,900 as "$1,93,900" on an en-IN browser.
+   Money in this report is quoted in USD, so it is grouped in USD convention
+   regardless of who is reading. */
+const money = n => (n === null || n === undefined)
+  ? "—" : "$" + Math.round(n).toLocaleString("en-US");
+
+/* Jargon, explained in place. Professionals skip it; everyone else hovers. */
+const GLOSSARY = {
+  "E&O": "Errors and omissions insurance. Distributors will not accept a film without it, and insurers will not issue it until every rights question is closed.",
+  "chain of title": "The documented trail of who owned a work, from its creator to whoever controls it today. A gap means nobody can grant you permission.",
+  "sync licence": "Permission from the publisher to set a composition against picture. Separate from, and additional to, the master use licence.",
+  "master use licence": "Permission from whoever owns the specific recording. A song needs this AND a sync licence — usually from two different companies.",
+  "de minimis": "Too fleeting and unfocused to count as a reproduction. Applies to brief background visuals; it does not apply to music.",
+  "prominence": "How much weight something carries on screen — from incidental at the edge of frame, to the subject of the shot.",
+  "cue sheet": "Your music editor's list of every piece of music in the film, with timings and publishers. Required on delivery."
+};
+const term = (label, key) =>
+  `<span class="term" data-tip="${esc(GLOSSARY[key || label])}">${esc(label)}</span>`;
+
+const ACTION_PLAIN = {
+  no_action:       "Nothing to do",
+  monitor:         "File the paperwork",
+  obtain_release:  "Get a signed release",
+  obtain_license:  "Licence it",
+  obscure_or_blur: "Blur it in post",
+  identify_source: "Identify it from your records",
+  legal_review:    "Send to your lawyer",
+  replace_asset:   "Replace or reshoot",
+  remove:          "Cut it"
+};
+const TIER_HEAD = {
+  blocking:"Blocks delivery", high:"High risk", medium:"Needs attention",
+  low:"Low risk", cleared:"Cleared"
+};
+
+let state = { runId:null, entries:[], report:null, rollup:null, sel:null, rules:{}, filter:"all", sample:null };
+
+/* ── environment ────────────────────────────────────────── */
+async function loadEnv(){
+  try{
+    const h = await (await fetch("/api/health")).json();
+    state.maxUploadMb = h.max_upload_mb;
+    const chips = [
+      `<span class="chip ${h.parallel_live?'on':'off'}">research <b>${h.parallel_live?'live':'fixtures'}</b></span>`,
+      `<span class="chip ${h.audio_id_enabled?'on':''}">music id <b>${h.audio_id_enabled?'on':'off'}</b></span>`,
+      `<span class="chip">${esc(h.config.spotter_model)}</span>`
+    ];
+    $("#env").innerHTML = chips.join("");
+    if (h.max_upload_mb) $("#drop-hint").textContent = `mp4 · mov · webm · mkv — up to ${h.max_upload_mb} MB`;
+  }catch(e){ $("#env").innerHTML = `<span class="chip off">backend unreachable</span>`; }
+  try{
+    const r = await (await fetch("/api/rules")).json();
+    r.rules.forEach(x => state.rules[x.rule_id] = x.description);
+  }catch(e){}
+}
+
+/* ── stages: start → running → results ──────────────────── */
+function show(stage){
+  $("#start").hidden   = stage !== "start";
+  $("#running").hidden = stage !== "running";
+  $("#results").hidden = stage !== "results";
+  $("#btn-new").hidden = stage === "start";
+  $("#btn-md").hidden  = stage !== "results";
+  $("#log-wrap").hidden = stage === "start";
+}
+
+function beginRun(head, sub){
+  $("#steps-live").innerHTML="";
+  $("#log").innerHTML=""; $("#items").innerHTML=""; $("#detail").innerHTML="";
+  $("#replay").style.display="none";
+  $("#run-head").textContent = head;
+  $("#run-sub").textContent = sub;
+  show("running");
+}
+
+$("#btn-new").onclick = () => { show("start"); state.runId=null; };
+
+/* ── spend gate ──────────────────────────────────────────
+   Every path that reaches paid research goes through here. It is a
+   promise: resolve(true) only on a deliberate click of the confirming
+   button. Cancel is what the keyboard does by default, because the
+   accident this exists to prevent is a stray click or a stray Enter. */
+function confirmSpend({kicker, title, body, cost, note, confirmLabel}){
+  return new Promise(resolve => {
+    const gate = $("#gate");
+    $("#gate-kicker").textContent = kicker ?? "This spends money";
+    $("#gate-title").textContent  = title;
+    $("#gate-body").innerHTML     = body;
+    $("#gate-cost").textContent   = cost;
+    $("#gate-cost-note").textContent = note ?? "";
+    $("#gate-go").textContent     = confirmLabel ?? "Run it live";
+    gate.hidden = false;
+    // Focus the way out, not the way through.
+    $("#gate-cancel").focus();
+
+    const done = ok => {
+      gate.hidden = true;
+      document.removeEventListener("keydown", onKey, true);
+      $("#gate-go").onclick = $("#gate-cancel").onclick = gate.onmousedown = null;
+      resolve(ok);
+    };
+    const onKey = e => {
+      if (e.key === "Escape"){ e.preventDefault(); done(false); }
+      // Enter must not confirm unless the confirming button itself is focused.
+      if (e.key === "Enter" && document.activeElement !== $("#gate-go")){
+        e.preventDefault(); done(false);
+      }
+    };
+    document.addEventListener("keydown", onKey, true);
+    gate.onmousedown = e => { if (e.target === gate) done(false); };
+    $("#gate-cancel").onclick = () => done(false);
+    $("#gate-go").onclick = () => done(true);
+  });
+}
+
+/* ── sample cuts ──────────────────────────
+   Bundled clips, so the first thing a tester sees is a report and
+   not a file picker. A sample with a recording replays for nothing;
+   one without has to research live, and says so on its face. */
+async function loadSamples(){
+  let list = [];
+  try{
+    const r = await fetch("/api/samples");
+    if(!r.ok) return;
+    list = (await r.json()).samples || [];
+  }catch{ return; }
+  if(!list.length) return;
+
+  const grid = $("#sample-grid");
+  grid.innerHTML = "";
+  list.forEach(sm => {
+    const card = document.createElement("button");
+    card.className = "card";
+    card.type = "button";
+    card.dataset.id = sm.id;
+    const free = sm.has_recording;
+    card.innerHTML =
+      `<div class="thumb">${
+         sm.has_poster ? `<img src="/api/samples/${encodeURIComponent(sm.id)}/poster" alt="" loading="lazy">` : ""
+       }<span class="dur">${tc(sm.runtime_seconds || 0).replace(/^0:/,"")}</span></div>
+       <div class="body">
+         <span class="t">${esc(sm.title)}${sm.year ? ` <span class="meta">${sm.year}</span>` : ""}</span>
+         <span class="meta">${esc(sm.sponsor || sm.producer || "")}</span>
+         <span class="ex">${esc(sm.exercises || sm.blurb || "")}</span>
+         <span class="tags">
+           ${free ? `<span class="tag free">replay · free</span>`
+                  : `<span class="tag bill">runs live · billed</span>`}
+           ${sm.has_cue_sheet ? `<span class="tag">cue sheet</span>` : ""}
+         </span>
+       </div>`;
+    card.onclick = () => runSample(sm, !sm.has_recording);
+    grid.appendChild(card);
+  });
+  $("#samples").hidden = false;
+}
+
+async function runSample(sm, live){
+  if (live){
+    const ok = await confirmSpend({
+      title: `Run ${sm.title} live?`,
+      body: `<p>This sample has no recorded pass yet, so running it means a real one:
+             the clip is watched frame by frame and every published work in it is
+             researched.</p>
+             <p>It charges the account hosting this page. A recorded pass would be
+             free to replay — see <code>record-sample</code> in the README.</p>`,
+      cost: "≈ $0.30–$0.80",
+      note: "one minute of picture",
+      confirmLabel: "Research it live"
+    });
+    if (!ok) return;
+  }
+  state.sample = sm;
+  beginRun(
+    live ? `Watching ${sm.title}…` : `Loading ${sm.title}…`,
+    live ? "A real pass over the clip. A few minutes."
+         : "Replaying a recorded pass — a moment."
+  );
+  try{
+    const res = await fetch(
+      `/api/runs/sample/${encodeURIComponent(sm.id)}${live ? "?live=true" : ""}`,
+      {method:"POST"});
+    if(!res.ok) throw new Error("could not start the sample");
+    const { run_id } = await res.json();
+    state.runId = run_id;
+    poll(run_id, 0);
+  }catch(err){
+    log({stage:"error",kind:"error",message:String(err.message || err)});
+    show("start");
+  }
+}
+
+/* ── run ────────────────────────────────────────────────── */
+async function run(live=false){
+  state.sample = null;
+  if (live){
+    const ok = await confirmSpend({
+      title: "Research this live?",
+      body: `<p>The worked example normally <b>replays</b> a recorded pass — real research,
+             real citations, served again rather than billed again.</p>
+             <p>Running it live sends every item to the Task API for fresh research. It takes
+             a few minutes and charges the account that hosts this page, not you.</p>`,
+      cost: "$0.30–$0.50",
+      note: "per run",
+      confirmLabel: "Yes, research live"
+    });
+    if (!ok) return;
+  }
+  beginRun(
+    live ? "Researching live…" : "Loading the worked example…",
+    live ? "Real research runs against every item. A few minutes."
+         : "Replaying a recorded pass — a moment."
+  );
+  const res = await fetch(`/api/runs/demo${live?"?live=true":""}`, {method:"POST"});
+  const { run_id } = await res.json();
+  state.runId = run_id;
+  poll(run_id, 0);
+}
+
+async function poll(runId, cursor){
+  const r = await (await fetch(`/api/runs/${runId}/events?since=${cursor}`)).json();
+  r.events.forEach(log);
+  cursor = r.next_cursor;
+  if (r.status === "complete" || r.status === "failed"){
+    await loadReport(runId);
+    return;
+  }
+  setTimeout(() => poll(runId, cursor), 500);
+}
+
+function log(e){
+  const line = `<span class="st">${esc(e.stage)}</span><span class="${esc(e.kind)}">${esc(e.message)}</span>`;
+  const el = document.createElement("div");
+  el.innerHTML = line;
+  $("#log").appendChild(el);
+  $("#log").scrollTop = $("#log").scrollHeight;
+  $("#log-now").textContent = e.message;
+
+  // Mirror progress onto the running screen, where the user is actually looking.
+  if (!$("#running").hidden){
+    const live = document.createElement("div");
+    live.className = e.kind === "done" ? "done" : (e.kind === "error" ? "error" : "");
+    live.innerHTML = line;
+    $("#steps-live").appendChild(live);
+    live.scrollIntoView({block:"nearest"});
+  }
+}
+$("#log-bar").onclick = () => $("#log-wrap").classList.toggle("open");
+
+async function loadReport(runId){
+  const d = await (await fetch(`/api/runs/${runId}`)).json();
+  state.report=d.report; state.entries=d.entries; state.rollup=d.rollup;
+  renderVerdict(); renderReel(); renderItems();
+  $("#btn-md").onclick = () => window.open(`/api/runs/${runId}/report.html`, "_blank");
+  show("results");
+  if (state.entries.length) select(0);
+}
+
+/* ── verdict ────────────────────────────────────────────── */
+function setVerdict(cls, slug, head, plain){
+  $("#verdict").className = "verdict " + cls;
+  $("#slug-text").textContent = slug;
+  $("#verdict-head").textContent = head;
+  $("#verdict-plain").innerHTML = plain;
+}
+
+function renderVerdict(){
+  const r=state.rollup, rep=state.report, t=r.tier_counts;
+  const n=r.blocking_count;
+
+  // "Owners found" earns its place at the top. Without it every number on
+  // screen counted a problem — items, blocking, exposure, lead time — and a
+  // pass that identified an owner for everything it researched still read as
+  // a list of failures.
+  const researched = state.entries.filter(x => x.finding?.researched);
+  const withOwner  = researched.filter(x => (x.finding.holders || []).some(h => h.identified));
+
+  if (r.eo_ready){
+    setVerdict("ready rise", `${esc(rep.project.title)} · ${esc(rep.project.cut_label)}`,
+      "Clear to proceed",
+      `Nothing in this cut currently blocks ${term("errors and omissions cover","E&O")}. `
+      + `${rep.entries.length} items were checked against ${r.total_citations} cited sources.`);
+  } else {
+    setVerdict("blocked rise", `${esc(rep.project.title)} · ${esc(rep.project.cut_label)}`,
+      "Not cleared for delivery",
+      `<b>${n} item${n===1?"":"s"}</b> would stop an ${term("errors and omissions","E&O")} policy `
+      + `being issued on this cut, which means it cannot be delivered as it stands. `
+      // What the pass achieved belongs in the same breath as what it found
+      // wrong. "Not cleared" is the answer, not a verdict on the search.
+      + (researched.length
+          ? `An owner was traced for <b>${withOwner.length} of the ${researched.length}</b> `
+            + `item${researched.length===1?"":"s"} worth researching, from `
+            + `${r.total_citations} cited sources you can check.`
+          : `Everything below is backed by ${r.total_citations} cited sources you can check.`));
+  }
+
+  const figs = [
+    ["items", rep.entries.length, ""],
+    ["owners found", researched.length
+        ? `${withOwner.length}<small>/${researched.length}</small>`
+        : "—", withOwner.length ? "good" : ""],
+    ["blocking", t.blocking, t.blocking ? "alarm" : ""],
+    ["cleared", t.cleared, t.cleared ? "good" : ""],
+    ["exposure", `${money(r.cost_low)}<small>–</small>${money(r.cost_high)}`, ""],
+    ["longest lead", `${r.longest_lead_days}<small>d</small>`, ""],
+    ["sources", r.total_citations, ""]
+  ];
+  $("#figures").innerHTML = figs.map(([k,v,c]) =>
+    `<div class="fig"><span class="k">${esc(k)}</span><span class="v ${c}">${v}</span></div>`).join("");
+  $("#item-count").textContent = `${rep.entries.length} items`;
+
+  const banner = $("#replay");
+  if (rep.replay_of){
+    const when = rep.replay_recorded_at
+      ? new Date(rep.replay_recorded_at).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"})
+      : "an earlier run";
+    banner.innerHTML = `<b>Replay of a live run</b> — recorded ${esc(when)} (<code>${esc(rep.replay_of)}</code>).
+      Real research and real citations, served again rather than re-billed per visitor.
+      <a href="#" id="go-live">Run it live instead →</a>`;
+    banner.style.display="block";
+    $("#go-live").onclick = e => {
+      e.preventDefault();
+      if (state.sample) runSample(state.sample, true); else run(true);
+    };
+  } else banner.style.display="none";
+}
+
+/* ── reel ───────────────────────────────────────────────── */
+function renderReel(){
+  const runtime = state.report.project.runtime_seconds;
+  if (!runtime){ $("#reel").style.display="none"; return; }
+  $("#reel").style.display="block";
+  $("#tl-end").textContent = tc(runtime);
+  $("#tl-title").textContent = `${state.report.project.title} · ${state.report.project.cut_label}`;
+  const track=$("#track"); track.innerHTML="";
+  state.entries.forEach((e,i) => {
+    const s=e.item.start_seconds;
+    if (s===null||s===undefined) return;
+    const end = e.item.end_seconds ?? s+2;
+    const el=document.createElement("div");
+    el.className="mark "+(e.verdict?.tier ?? "low");
+    el.style.left=(s/runtime*100)+"%";
+    el.style.width=Math.max(.4,(end-s)/runtime*100)+"%";
+    el.title=`${e.item.known_work||e.item.title} · ${tc(s)}`;
+    el.dataset.idx=i;
+    el.onclick=()=>select(i);
+    track.appendChild(el);
+  });
+}
+
+/* ── items ──────────────────────────────────────────────── */
+$$("#filters button").forEach(b => b.onclick = () => {
+  $$("#filters button").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); state.filter=b.dataset.f; renderItems();
+});
+
+function passesFilter(e){
+  const t=e.verdict?.tier, a=e.verdict?.action;
+  if (state.filter==="all") return true;
+  if (state.filter==="blocking") return !!e.verdict?.eo_blocking;
+  if (state.filter==="clear") return t==="cleared" || a==="no_action";
+  return t!=="cleared" && a!=="no_action";
+}
+
+function renderItems(){
+  const shown = state.entries.map((e,i)=>({e,i})).filter(({e})=>passesFilter(e));
+  if (!shown.length){
+    $("#items").innerHTML = `<div class="empty"><p>Nothing in this view.</p></div>`;
+    return;
+  }
+  let html="", lastTier=null;
+  for (const {e,i} of shown){
+    const tier = e.verdict?.tier ?? "low";
+    if (tier !== lastTier){
+      const count = shown.filter(x => (x.e.verdict?.tier ?? "low") === tier).length;
+      html += `<div class="group-head">${esc(TIER_HEAD[tier]||tier)} <b>· ${count}</b></div>`;
+      lastTier = tier;
+    }
+    const where = (e.item.start_seconds!==null && e.item.start_seconds!==undefined)
+      ? tc(e.item.start_seconds) : (e.item.scene ?? "—");
+    const cites = e.finding?.basis?.reduce((n,b)=>n+(b.citations?.length??0),0) ?? 0;
+    html += `<div class="row" data-idx="${i}">
+      <div class="rail ${tier}"></div>
+      <div>
+        <div class="name">${esc(e.item.known_work || e.item.title)}</div>
+        <div class="meta">
+          <span class="tc">${esc(where)}</span>
+          <span>${esc(human(e.item.category))}</span>
+          <span>${esc(human(e.item.prominence))}</span>
+        </div>
+        ${cites?`<div class="cites">${cites} cited source${cites===1?"":"s"}</div>`:""}
+      </div>
+      <div class="todo">${esc(ACTION_PLAIN[e.verdict?.action] ?? human(e.verdict?.action??""))}</div>
+    </div>`;
+  }
+  $("#items").innerHTML = html;
+  $$("#items .row").forEach(el => el.onclick = () => select(+el.dataset.idx));
+}
+
+/* ── detail ─────────────────────────────────────────────── */
+function select(i){
+  state.sel=i;
+  $$(".row").forEach(el=>el.classList.toggle("sel", +el.dataset.idx===i));
+  $$(".mark").forEach(el=>el.classList.toggle("sel", +el.dataset.idx===i));
+  renderDetail(state.entries[i]);
+  $(".col.right").scrollTop=0;
+}
+
+function renderDetail(e){
+  const it=e.item, f=e.finding, v=e.verdict;
+  const where = (it.start_seconds!==null&&it.start_seconds!==undefined)
+    ? `${tc(it.start_seconds)} – ${tc(it.end_seconds)}` : (it.scene ?? "not located");
+  $("#detail-head").textContent = `Detail · ${human(it.category)}`;
+
+  let h = `<div class="detail rise">
+    <div class="eyebrow">${esc(human(it.category))}</div>
+    <h2>${esc(it.known_work || it.title)}</h2>
+    <div class="where">${esc(where)}<span class="sep">·</span>${esc(human(it.source))}
+      <span class="sep">·</span>${term(human(it.prominence),"prominence")} in frame</div>`;
+
+  // The finding comes first. This pane used to open with the blocking box,
+  // so an item whose owner had been traced through fifteen sources still led
+  // with the sentence about what was missing.
+  const owners = (f?.holders || []).filter(ho => ho.identified);
+  if (owners.length){
+    const cites = (f.basis || []).reduce((a,b) => a + (b.citations?.length || 0), 0);
+    h += `<div class="found">
+      <span class="found-k">owner traced to</span>
+      <span class="found-v">${owners.slice(0,3).map(o => esc(o.name)).join(" · ")}${
+        owners.length > 3 ? ` <span class="found-k">+${owners.length - 3} more</span>` : ""}</span>
+      ${cites ? `<span class="found-k">from ${cites} cited source${cites===1?"":"s"}</span>` : ""}
+    </div>`;
+  }
+
+  if (v){
+    h += `<div class="position ${v.tier}">
+      <div class="verdict-line">${esc(v.tier.toUpperCase())}${v.eo_blocking?" · blocks delivery":""}</div>
+      <p>${esc(v.rationale)}</p>
+      <div class="do"><b>What to do:</b> ${esc(ACTION_PLAIN[v.action] ?? human(v.action))}${
+        v.lead_time_days?` — allow about ${v.lead_time_days} days`:""}${
+        v.fee_low_usd||v.fee_high_usd?`, budget ${money(v.fee_low_usd)}–${money(v.fee_high_usd)}`:""}.</div>
+    </div>`;
+  }
+
+  h += `<div class="sec"><h3>What's in the frame</h3><p>${esc(it.description)}</p>`;
+  if (it.evidence) h += `<p class="muted">${esc(it.evidence)}</p>`;
+  h += `</div>`;
+
+  if (v && v.documents?.length){
+    h += `<div class="sec"><h3>Paperwork required</h3><dl class="facts">`;
+    v.documents.forEach(d => {
+      const key = d==="sync_license"?"sync licence":d==="master_use_license"?"master use licence":null;
+      h += `<dt>Document</dt><dd>${key?term(human(d),key):esc(human(d))}</dd>`;
+    });
+    h += `</dl></div>`;
+  }
+
+  if (f?.holders?.length){
+    h += `<div class="sec"><h3>Who owns it</h3>` + f.holders.map(ho=>{
+      const bits=[ho.role,ho.territory,ho.share_percent!=null?ho.share_percent+"%":null]
+        .filter(Boolean).map(esc).join(" · ");
+      const contact = ho.contact_url
+        ? `<div class="hnote"><a href="${esc(ho.contact_url)}" target="_blank" rel="noopener">${esc(ho.contact_url)}</a></div>`
+        : (ho.contact?`<div class="hnote">${esc(ho.contact)}</div>`:"");
+      return `<div class="holder"><div class="hn">${esc(ho.name)}</div><div class="hr">${bits}</div>
+        ${ho.notes?`<div class="hnote">${esc(ho.notes)}</div>`:""}${contact}</div>`;
+    }).join("") + `</div>`;
+  }
+
+  if (f?.unresolved?.length){
+    h += `<div class="sec"><h3>${owners.length ? "What is still open" : "What nobody could establish"}</h3>`
+      + f.unresolved.map(u=>`<div class="gap">${esc(u)}</div>`).join("")
+      + `<p class="muted" style="margin-top:10px">${owners.length
+           ? `The owner above is named in the sources, but a gap in the ${term("chain of title")}
+              means it is not yet provable who can grant permission today.`
+           : `A gap in the ${term("chain of title")} means there is nobody who can grant
+              permission until it is closed.`}</p></div>`;
+  }
+
+  const basis=(f?.basis??[]).filter(b=>b.citations?.length);
+  if (basis.length){
+    const n=basis.reduce((a,b)=>a+b.citations.length,0);
+    h += `<div class="sec"><h3>Sources · ${n} cited
+      <span class="conf ${esc(f.confidence)}">${esc(f.confidence)} confidence</span></h3>`
+      + basis.map(b=>`<div class="cite">
+        <div class="field">${esc(b.field)}<span class="conf ${esc(b.confidence)}">${esc(b.confidence)}</span></div>
+        ${b.reasoning?`<div class="why">${esc(b.reasoning)}</div>`:""}
+        ${b.citations.map(c=>`<div><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title||c.url)}</a>
+          ${(c.excerpts||[]).slice(0,2).map(x=>`<blockquote>${esc(x)}</blockquote>`).join("")}</div>`).join("")}
+      </div>`).join("") + `</div>`;
+  }
+
+  if (v?.fired_rules?.length){
+    h += `<div class="sec"><h3>How this was decided</h3><div class="rules">`
+      + v.fired_rules.map(r=>`<span class="rule" title="${esc(state.rules[r.rule_id]||r.description)}">${esc(r.rule_id)}</span>`).join("")
+      + `</div><p class="muted" style="margin-top:11px">Decided by a fixed rule engine, not by a
+         language model — the same evidence always produces the same position. Hover a rule to read it.</p></div>`;
+  }
+
+  if (e.outreach_draft){
+    h += `<div class="sec"><h3>Draft request</h3><pre class="draft" id="draft">${esc(e.outreach_draft)}</pre>
+      <button class="btn copy" id="btn-copy">Copy</button></div>`;
+  }
+
+  $("#detail").innerHTML = h + `</div>`;
+  const copy=$("#btn-copy");
+  if (copy) copy.onclick = () => {
+    navigator.clipboard.writeText($("#draft").textContent);
+    copy.textContent="Copied"; setTimeout(()=>copy.textContent="Copy",1600);
+  };
+}
+
+/* ── upload ─────────────────────────────────────────────── */
+let picked=null, cueSheetId=null, pickedDuration=null;
+
+const drop=$("#drop"), fileInput=$("#file");
+["dragenter","dragover"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add("over")}));
+["dragleave","drop"].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove("over")}));
+drop.addEventListener("drop",e=>{ if(e.dataTransfer.files?.length){fileInput.files=e.dataTransfer.files;choose();} });
+fileInput.onchange=choose;
+
+function choose(){
+  picked=fileInput.files?.[0]||null;
+  if(!picked) return;
+  const mb=picked.size/1e6;
+  $("#drop-label").textContent=picked.name;
+  $("#drop-hint").textContent=`${mb.toFixed(1)} MB`;
+  $("#btn-analyse").disabled=false;
+  drop.closest(".step").classList.add("done");
+
+  // Read the runtime in the browser as well as on the server: it lets the
+  // warning below quote a realistic wait before anything is uploaded.
+  pickedDuration = null;
+  const probe = document.createElement("video");
+  probe.preload = "metadata";
+  probe.onloadedmetadata = () => {
+    if (isFinite(probe.duration)) {
+      pickedDuration = Math.round(probe.duration);
+      $("#drop-hint").textContent = `${mb.toFixed(1)} MB · ${tc(pickedDuration)}`;
+      sizeWarning(mb);
+    }
+    URL.revokeObjectURL(probe.src);
+  };
+  probe.src = URL.createObjectURL(picked);
+  sizeWarning(mb);
+}
+
+function sizeWarning(mb){
+  if(state.maxUploadMb && mb>state.maxUploadMb){
+    warn(`This file is ${mb.toFixed(0)} MB. Without a Cloud Storage bucket the limit `
+       + `is ${state.maxUploadMb} MB — set GCS_BUCKET to analyse longer cuts.`, true);
+    $("#btn-analyse").disabled=true;
+    return;
+  }
+  const mins = pickedDuration ? Math.max(1, Math.round(pickedDuration/60 * 2.5)) : null;
+  warn(
+    (mins ? `Roughly ${mins} minute${mins===1?"":"s"} to analyse. ` : "")
+    + "Research is billed per distinct work found, so a cut full of songs and "
+    + "brands costs more than a quiet one.", false);
+}
+
+function warn(msg,isErr){ const el=$("#upload-warn"); el.textContent=msg; el.className="hint"+(isErr?" error":""); }
+
+$("#cuefile").onchange = async e => {
+  const f=e.target.files?.[0]; if(!f) return;
+  const label=$("#cue-label"); label.textContent="reading…";
+  try{
+    const form=new FormData(); form.append("file",f);
+    const res=await fetch("/api/cue-sheets",{method:"POST",body:form});
+    const data=await res.json();
+    if(!res.ok) throw new Error(data.detail||"could not read cue sheet");
+    cueSheetId=data.cue_sheet_id;
+    label.textContent=`✓ ${f.name} — ${data.cues} cue${data.cues===1?"":"s"}`
+      + (data.library_cues?`, ${data.library_cues} library`:"");
+    label.classList.add("set");
+    label.closest(".step").classList.add("done");
+    $("#cue-note").textContent = data.warnings?.length ? data.warnings.join(" ")
+      : `${data.placed} cue(s) carry timecodes and will be matched against the picture.`;
+  }catch(err){
+    cueSheetId=null; label.textContent="Choose a CSV"; label.classList.remove("set");
+    label.closest(".step").classList.remove("done");
+    $("#cue-note").textContent = err.message;
+  }
+};
+
+$("#btn-analyse").onclick = async () => {
+  if(!picked) return;
+  state.sample = null;
+  const mins = pickedDuration ? Math.max(1, Math.round(pickedDuration/60)) : null;
+  const ok = await confirmSpend({
+    title: "Analyse this cut?",
+    body: `<p>This is a real pass, not a replay. <b>${esc(picked.name)}</b>${
+             mins ? ` (about ${mins} minute${mins===1?"":"s"})` : ""} is uploaded, watched
+           frame by frame, and every published work it finds is researched for chain of
+           title.</p>
+           <p>Both stages are billed per request, and the cost scales with how much
+           clearable material is in the cut — a dense minute costs more than a quiet
+           ten.</p>`,
+    cost: "≈ $0.30–$1.00",
+    note: "short clip, estimated",
+    confirmLabel: "Analyse it"
+  });
+  if (!ok) return;
+  $("#btn-analyse").disabled=true;
+  beginRun("Uploading…", `Sending ${picked.name}.`);
+  try{
+    const form=new FormData(); form.append("file",picked);
+    const up=await fetch("/api/uploads",{method:"POST",body:form});
+    const upData=await up.json();
+    if(!up.ok) throw new Error(upData.detail||"upload failed");
+    log({stage:"upload",kind:"stage",message:`${upData.filename} staged at ${upData.location}`});
+
+    // Runtime drives two things that fail silently without it: the timeline has
+    // nothing to lay items against, and the spotting pass cannot plan windows,
+    // so a feature would go to the model as one request instead of twenty.
+    // Prefer the server's ffprobe reading; fall back to the browser's.
+    const runtime = upData.duration_seconds ?? pickedDuration ?? null;
+    if (runtime) log({stage:"upload",kind:"stage",message:`runtime ${tc(runtime)}`});
+
+    $("#run-head").textContent = "Watching your cut…";
+    $("#run-sub").textContent =
+      "Every frame and the soundtrack. Each stage appears below as it finishes.";
+
+    const res=await fetch("/api/runs",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        project:{
+          title:$("#f-title").value||"Untitled",
+          cut_label:$("#f-cut").value||"rough cut",
+          distribution_intent:$("#f-intent").value,
+          runtime_seconds:runtime,
+          territories:["worldwide"]
+        },
+        upload_id:upData.upload_id,
+        cue_sheet_id:cueSheetId
+      })
+    });
+    if(!res.ok) throw new Error("could not start the run");
+    const {run_id}=await res.json();
+    state.runId=run_id;
+    poll(run_id,0);
+  }catch(err){
+    show("start");
+    warn(err.message,true);
+    $("#btn-analyse").disabled=false;
+  }
+};
+
+$("#btn-run").onclick = () => run(false);
+show("start");
+loadEnv();
+loadSamples();
+</script>
+</body>
+</html>

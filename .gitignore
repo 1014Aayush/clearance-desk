@@ -1,0 +1,26 @@
+.env
+.env.local
+*.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+runs/
+uploads/
+media/*.mp4
+media/*.mov
+!media/.gitkeep
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+gcloud-key.json
+service-account*.json
+
+# scratch: downloaded masters and contact sheets, not part of the project
+.work/
