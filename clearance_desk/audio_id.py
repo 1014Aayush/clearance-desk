@@ -37,6 +37,18 @@ from .models import Category, RiskItem
 
 logger = logging.getLogger(__name__)
 
+
+class AudioIdUnavailable(RuntimeError):
+    """The fingerprinting service could not be asked.
+
+    Deliberately distinct from a no-match. A no-match is an *answer* — this
+    recording is not in the catalogue, so the cue is very likely original
+    music. This exception is the *absence* of an answer: an expired token, a
+    refused request, a network failure. The two must never collapse into the
+    same outcome, because one is a finding about the music and the other is a
+    finding about our own plumbing, and only the first belongs in a report.
+    """
+
 #: Enough audio to fingerprint reliably without pushing at the upload limit.
 SAMPLE_SECONDS = 20
 
@@ -168,17 +180,24 @@ class AuddIdentifier:
             )
             response.raise_for_status()
             payload = response.json()
-        except Exception:  # noqa: BLE001 - never fail a run over a lookup
+        except Exception as exc:  # noqa: BLE001 - reported, never silently dropped
             logger.exception("AudD lookup failed")
-            return None
+            raise AudioIdUnavailable(f"AudD request failed: {exc}") from exc
 
         if payload.get("status") != "success":
-            logger.warning("AudD returned %s", payload.get("error") or payload.get("status"))
-            return None
+            detail = payload.get("error") or payload.get("status")
+            if isinstance(detail, dict):
+                detail = (
+                    detail.get("error_message")
+                    or detail.get("error_code")
+                    or detail
+                )
+            logger.warning("AudD returned %s", detail)
+            raise AudioIdUnavailable(f"AudD refused the lookup: {detail}")
 
         result = payload.get("result")
         if not result:
-            return None  # no match — a normal outcome, not an error
+            return None  # no match — a real answer, not a failure
         title = (result.get("title") or "").strip()
         if not title:
             return None

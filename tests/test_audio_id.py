@@ -13,6 +13,7 @@ import pytest
 from clearance_desk.audio_id import (
     MIN_SAMPLE_SECONDS,
     SAMPLE_SECONDS,
+    AudioIdUnavailable,
     MusicMatch,
     NullIdentifier,
     identify_music,
@@ -232,3 +233,50 @@ def test_named_cues_are_not_re_identified(monkeypatch: pytest.MonkeyPatch) -> No
     identify_music([named], "cut.mp4", identifier, Settings())
     assert identifier.calls == 0
     assert named.known_work == "Rhapsody in Blue"
+
+
+def test_a_refused_lookup_is_not_a_verdict_about_the_music(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """An expired token must never read as "we checked and found nothing".
+
+    This is the failure that shipped: AudD rejected the key, the lookup
+    returned ``None`` exactly as a genuine no-match does, and the run reported
+    "likely original score" — a statement about the music, produced by a
+    statement about our own credentials.
+    """
+    monkeypatch.setattr("clearance_desk.audio_id.ffmpeg_available", lambda: True)
+    monkeypatch.setattr(
+        "clearance_desk.audio_id.extract_audio_segment", lambda *a, **k: b"audio"
+    )
+
+    class RefusingIdentifier:
+        name = "refusing"
+
+        def identify(self, audio: bytes) -> MusicMatch | None:  # noqa: ARG002
+            raise AudioIdUnavailable("AudD refused the lookup: api_token invalid")
+
+    item = cue()
+    with pytest.raises(AudioIdUnavailable):
+        identify_music([item], "cut.mp4", RefusingIdentifier(), Settings())
+
+    # And crucially the cue is left unnamed, so the rules still ask for a cue
+    # sheet rather than treating it as settled.
+    assert item.known_work is None
+
+
+def test_a_genuine_no_match_is_still_an_ordinary_answer(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """The other half of the distinction: the catalogue answering "not here"
+    is information, and must not be escalated into an error."""
+    monkeypatch.setattr("clearance_desk.audio_id.ffmpeg_available", lambda: True)
+    monkeypatch.setattr(
+        "clearance_desk.audio_id.extract_audio_segment", lambda *a, **k: b"audio"
+    )
+    item = cue()
+
+    matches = identify_music([item], "cut.mp4", StubIdentifier(None), Settings())
+
+    assert matches == {}
+    assert item.known_work is None

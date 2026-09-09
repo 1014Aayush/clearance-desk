@@ -391,6 +391,11 @@ gcloud services enable run.googleapis.com cloudbuild.googleapis.com \
 printf '%s' "$PARALLEL_API_KEY" | \
   gcloud secrets create parallel-api-key --data-file=- --replication-policy=automatic
 
+# Optional, but without it acoustic identification is off in production and
+# unnamed cues are reported as unchecked rather than quietly named.
+printf '%s' "$AUDD_API_TOKEN" | \
+  gcloud secrets create audd-api-token --data-file=- --replication-policy=automatic
+
 # A fresh project grants its default compute service account none of the roles
 # Cloud Build needs. Without these the first deploy fails at "Uploading
 # sources" with an opaque storage.objects.get permission error.
@@ -403,6 +408,8 @@ for role in roles/cloudbuild.builds.builder roles/storage.objectViewer \
 done
 gcloud secrets add-iam-policy-binding parallel-api-key \
   --member="serviceAccount:$SA" --role=roles/secretmanager.secretAccessor
+gcloud secrets add-iam-policy-binding audd-api-token \
+  --member="serviceAccount:$SA" --role=roles/secretmanager.secretAccessor
 ```
 
 Then deploy (repeat this line alone for subsequent deploys):
@@ -412,7 +419,7 @@ gcloud run deploy clearance-desk \
   --source . --region us-central1 --allow-unauthenticated \
   --memory 2Gi --cpu 2 --timeout 3600 --max-instances 3 \
   --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=us-central1,GOOGLE_GENAI_USE_VERTEXAI=true,SPOTTER_MODEL=gemini-2.5-pro,DRAFTER_MODEL=gemini-2.5-flash,PARALLEL_PROCESSOR_STANDARD=core-fast,PARALLEL_PROCESSOR_DEEP=pro-fast,USE_FIXTURES=false" \
-  --set-secrets "PARALLEL_API_KEY=parallel-api-key:latest"
+  --set-secrets "PARALLEL_API_KEY=parallel-api-key:latest,AUDD_API_TOKEN=audd-api-token:latest"
 ```
 
 Model availability is project- and region-specific. Verify before deploying:

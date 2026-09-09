@@ -274,7 +274,7 @@ class ClearancePipeline:
         becomes a work research can look up, turning a dead end into a normal
         two-sided music clearance.
         """
-        from .audio_id import identify_music, needs_identification
+        from .audio_id import AudioIdUnavailable, identify_music, needs_identification
 
         candidates = [i for i in items if needs_identification(i)]
         if not candidates:
@@ -297,11 +297,19 @@ class ClearancePipeline:
             f"Identifying {len(candidates)} unnamed music cue(s)…",
             count=len(candidates),
         )
+        unavailable: str | None = None
         try:
             matches = identify_music(items, source, settings=self.settings)
+        except AudioIdUnavailable as exc:
+            # The service could not be asked. Say so, rather than letting the
+            # silence read as "we checked and found nothing".
+            logger.warning("acoustic identification unavailable: %s", exc)
+            matches = {}
+            unavailable = str(exc)
         except Exception:  # noqa: BLE001 - a failed lookup must not fail the run
             logger.exception("acoustic identification failed")
             matches = {}
+            unavailable = "acoustic identification failed"
 
         for item_id, match in matches.items():
             item = next((i for i in items if i.id == item_id), None)
@@ -312,7 +320,16 @@ class ClearancePipeline:
                 kind="item",
                 item_id=item_id,
             )
-        if not matches:
+        if unavailable:
+            emit(
+                RunStatus.SPOTTING,
+                f"{len(candidates)} cue(s) could not be checked — acoustic "
+                f"identification unavailable ({unavailable}). This is not a "
+                "finding about the music: the cues stay unidentified and the "
+                "rules still ask for a cue sheet.",
+                count=len(candidates),
+            )
+        elif not matches:
             emit(
                 RunStatus.SPOTTING,
                 "No cues matched a released recording — likely original score.",
