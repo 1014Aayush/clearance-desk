@@ -427,7 +427,7 @@ Then deploy (repeat this line alone for subsequent deploys):
 gcloud run deploy clearance-desk \
   --source . --region us-central1 --allow-unauthenticated \
   --memory 2Gi --cpu 2 --timeout 3600 --max-instances 1 \
-  --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=us-central1,GOOGLE_GENAI_USE_VERTEXAI=true,SPOTTER_MODEL=gemini-2.5-pro,DRAFTER_MODEL=gemini-2.5-flash,PARALLEL_PROCESSOR_STANDARD=core-fast,PARALLEL_PROCESSOR_DEEP=pro-fast,USE_FIXTURES=false,MAX_LIVE_RUNS_PER_DAY=5" \
+  --set-env-vars "GOOGLE_CLOUD_PROJECT=$PROJECT,GOOGLE_CLOUD_LOCATION=us-central1,GOOGLE_GENAI_USE_VERTEXAI=true,SPOTTER_MODEL=gemini-2.5-pro,DRAFTER_MODEL=gemini-2.5-flash,PARALLEL_PROCESSOR_STANDARD=core-fast,PARALLEL_PROCESSOR_DEEP=pro-fast,USE_FIXTURES=false,MAX_LIVE_RUNS_PER_DAY=5,BUDGET_BUCKET=$GCS_BUCKET" \
   --set-secrets "PARALLEL_API_KEY=parallel-api-key:latest,AUDD_API_TOKEN=audd-api-token:latest"
 ```
 

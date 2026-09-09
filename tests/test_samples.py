@@ -308,3 +308,97 @@ def test_replays_are_never_charged_against_the_budget(client) -> None:  # noqa: 
         res = client.post("/api/runs/sample/reel-one")
         assert res.status_code == 202, res.text
     assert server._live_budget.spent_today() == 0
+
+
+# ---------------------------------------------------------------------------
+# The budget that outlives the container
+# ---------------------------------------------------------------------------
+
+
+class _FakeBlob:
+    """Enough of a GCS blob to exercise compare-and-swap."""
+
+    def __init__(self, body: bytes | None = None):
+        self.body = body
+        self.generation = 1 if body is not None else 0
+        self.writes = 0
+
+    def download_as_bytes(self) -> bytes:
+        from google.api_core import exceptions as gexc
+
+        if self.body is None:
+            raise gexc.NotFound("absent")
+        return self.body
+
+    def upload_from_string(self, data, content_type=None, if_generation_match=None):  # noqa: ANN001, ARG002
+        from google.api_core import exceptions as gexc
+
+        if if_generation_match is not None and if_generation_match != self.generation:
+            raise gexc.PreconditionFailed("stale")
+        self.body = data.encode("utf-8")
+        self.generation += 1
+        self.writes += 1
+
+
+def _durable(blob):
+    from clearance_desk import server
+
+    b = server._DurableBudget("bucket")
+    b._blob_ref = blob
+    return b
+
+
+def test_durable_budget_persists_and_then_refuses() -> None:
+    """The point of the exercise: the count survives the process, so a deploy
+    or a cold start no longer hands out a fresh allowance."""
+    blob = _FakeBlob()
+    budget = _durable(blob)
+    assert [budget.take(2) for _ in range(4)] == [True, True, False, False]
+
+    # A new object over the same stored state — a restarted container — still
+    # sees the spend.
+    assert _durable(_FakeBlob(blob.body)).take(2) is False
+
+
+def test_durable_budget_resets_on_a_new_day() -> None:
+    import json as _json
+
+    blob = _FakeBlob(_json.dumps({"day": "2000-01-01", "spent": 99}).encode())
+    assert _durable(blob).take(2) is True
+
+
+def test_a_lost_race_is_retried_not_double_spent() -> None:
+    """Two requests arriving together must not both spend the last run."""
+    import json as _json
+
+    blob = _FakeBlob(_json.dumps({"day": "2000-01-01", "spent": 0}).encode())
+    budget = _durable(blob)
+
+    original = blob.upload_from_string
+    state = {"raced": False}
+
+    def race_once(data, content_type=None, if_generation_match=None):  # noqa: ANN001
+        if not state["raced"]:
+            state["raced"] = True
+            blob.generation += 1  # somebody else wrote first
+        return original(data, content_type, if_generation_match)
+
+    blob.upload_from_string = race_once
+    assert budget.take(5) is True
+    assert state["raced"] is True
+
+
+def test_unreachable_storage_falls_back_rather_than_breaking_the_demo() -> None:
+    """A storage outage must not make every run look broken. Falling back to
+    the in-process counter is no worse than the behaviour it replaced."""
+    from clearance_desk import server
+
+    class _Broken:
+        generation = 0
+
+        def download_as_bytes(self):
+            raise RuntimeError("network is down")
+
+    server._live_budget = server._LiveRunBudget()
+    assert _durable(_Broken()).take(2) is True
+    assert server._live_budget.spent_today() == 1

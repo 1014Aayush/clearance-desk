@@ -45,6 +45,15 @@ class Settings(BaseSettings):
     # running from source and wrong for anything public.
     max_live_runs_per_day: int = 5
 
+    # Where that count is kept. The counter is otherwise a number in memory,
+    # which resets whenever the container does — on every deploy, and on every
+    # cold start once the service has scaled to zero. That makes the "per day"
+    # in the setting above a lie: a caller patient enough to wait out an idle
+    # timeout gets a fresh allowance. Naming a bucket here moves the count to a
+    # small object in Cloud Storage, where it survives both. Empty falls back
+    # to the in-process counter, which is right for running from source.
+    budget_bucket: str = ""
+
     # --- Runtime -----------------------------------------------------------
     use_fixtures: bool = False
     port: int = 8080
