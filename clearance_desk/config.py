@@ -35,6 +35,16 @@ class Settings(BaseSettings):
     # Free tier at https://audd.io — 300 requests, no card.
     audd_api_token: str = ""
 
+    # --- Public deployment guard -------------------------------------------
+    # The browser's cost confirmation stops an honest tester clicking around
+    # and does nothing whatever about a loop against the API. A public,
+    # unauthenticated deployment spending a fixed prepaid balance needs the
+    # limit enforced on the server, so this caps *billed* runs per day.
+    # Replays are never counted: they cost nothing, and they are what the
+    # bundled samples are for. Zero disables the cap, which is right for
+    # running from source and wrong for anything public.
+    max_live_runs_per_day: int = 5
+
     # --- Runtime -----------------------------------------------------------
     use_fixtures: bool = False
     port: int = 8080

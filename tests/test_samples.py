@@ -251,3 +251,60 @@ def test_a_recorded_sample_replays_rather_than_researching(
     report = client.get(f"/api/runs/{body['run_id']}").json()["report"]
     assert report["replay_of"] == "run_sample"
     assert report["replay_recorded_at"]
+
+
+# ---------------------------------------------------------------------------
+# The public deployment's spending guard
+# ---------------------------------------------------------------------------
+
+
+def _budget():
+    from clearance_desk.server import _LiveRunBudget
+
+    return _LiveRunBudget()
+
+
+def test_the_budget_stops_at_the_limit() -> None:
+    """A public, unauthenticated URL spending a fixed prepaid balance needs the
+    limit enforced on the server. The browser's confirmation dialog is not a
+    control — a loop against the API never sees it."""
+    budget = _budget()
+    assert [budget.take(3) for _ in range(5)] == [True, True, True, False, False]
+    assert budget.spent_today() == 3
+
+
+def test_a_zero_limit_means_no_cap() -> None:
+    """Running from source should not inherit a limit written for a public URL."""
+    budget = _budget()
+    assert all(budget.take(0) for _ in range(50))
+    assert budget.spent_today() == 0
+
+
+def test_the_budget_resets_the_next_day() -> None:
+    import datetime as _dt
+
+    budget = _budget()
+    assert budget.take(1) is True
+    assert budget.take(1) is False
+    budget._day = _dt.date(2000, 1, 1)  # yesterday, as far as the counter knows
+    assert budget.take(1) is True
+
+
+def test_replays_are_never_charged_against_the_budget(client) -> None:  # noqa: ANN001
+    """The samples are the point of the page. A visitor clicking through all
+    eight must never be told the tool is out of budget."""
+    from clearance_desk import server
+
+    server._live_budget = server._LiveRunBudget()
+
+    # A sample with no recording refuses rather than billing. That refusal
+    # must not cost budget either — nothing was spent.
+    assert client.post("/api/runs/sample/reel-one").status_code == 409
+    assert server._live_budget.spent_today() == 0
+
+    # Once it has a recorded pass, replaying it is free however often.
+    save_sample_recording(get_sample("reel-one"), _report(), [])
+    for _ in range(8):
+        res = client.post("/api/runs/sample/reel-one")
+        assert res.status_code == 202, res.text
+    assert server._live_budget.spent_today() == 0

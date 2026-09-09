@@ -11,6 +11,7 @@ from __future__ import annotations
 import logging
 import threading
 import uuid
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from fastapi import BackgroundTasks, FastAPI, File, HTTPException, UploadFile
@@ -157,6 +158,8 @@ def health() -> dict[str, object]:
             f"gs://{settings.gcs_bucket}" if settings.gcs_bucket else "local disk"
         ),
         "max_upload_mb": None if settings.gcs_bucket else INLINE_LIMIT_BYTES // 1_000_000,
+        "live_runs_per_day": settings.max_live_runs_per_day or None,
+        "live_runs_spent_today": _live_budget.spent_today(),
     }
 
 
@@ -233,8 +236,70 @@ async def create_cue_sheet(file: UploadFile = File(...)) -> dict[str, object]:
     }
 
 
+class _LiveRunBudget:
+    """A hard stop on billed runs, enforced where it cannot be walked past.
+
+    The confirmation dialog in the browser is decoration. It stops an honest
+    tester clicking around; it does nothing at all about a loop against the
+    API, and this deployment is public and unauthenticated. Research is billed
+    per distinct work against a fixed prepaid balance, so roughly forty
+    unattended requests would empty the account and leave the submission URL
+    demonstrating a dead application — the precise outcome the replay design
+    elsewhere in this file exists to prevent.
+
+    Replays are never counted. They cost nothing, they are what the bundled
+    samples are for, and a visitor clicking through all eight should never be
+    told the tool is out of budget.
+    """
+
+    def __init__(self) -> None:
+        self._lock = threading.Lock()
+        self._day: date | None = None
+        self._spent = 0
+
+    def take(self, limit: int) -> bool:
+        """Claim one billed run, or refuse. ``limit <= 0`` means no cap."""
+        if limit <= 0:
+            return True
+        today = datetime.now(timezone.utc).date()
+        with self._lock:
+            if self._day != today:
+                self._day, self._spent = today, 0
+            if self._spent >= limit:
+                return False
+            self._spent += 1
+            return True
+
+    def spent_today(self) -> int:
+        today = datetime.now(timezone.utc).date()
+        with self._lock:
+            return self._spent if self._day == today else 0
+
+
+_live_budget = _LiveRunBudget()
+
+
 @app.post("/api/runs", response_model=RunAccepted, status_code=202)
 def create_run(request: RunRequest, background: BackgroundTasks) -> RunAccepted:
+    # Every billed path in this file funnels through here — an uploaded cut, a
+    # sample forced live, the worked example forced live — so this is the one
+    # place the budget has to hold.
+    settings = get_settings()
+    if not settings.use_fixtures and not _live_budget.take(
+        settings.max_live_runs_per_day
+    ):
+        raise HTTPException(
+            status_code=429,
+            detail=(
+                f"This deployment serves at most "
+                f"{settings.max_live_runs_per_day} billed run(s) per day, and "
+                "today's are spent. Nothing is broken: every bundled sample "
+                "still replays a real recorded pass, with its live findings "
+                "and citations intact, for free. Run the tool from source to "
+                "research your own footage without this limit."
+            ),
+        )
+
     run_id = f"run_{uuid.uuid4().hex[:12]}"
     with _lock:
         store.create(
