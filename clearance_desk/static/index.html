@@ -195,7 +195,7 @@ header{
 
 /* ── body ───────────────────────────────────────────────── */
 .body{display:grid;grid-template-columns:minmax(340px,0.85fr) minmax(430px,1.15fr);flex:1;min-height:0}
-.col{min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.col{min-height:0;overflow-y:auto}
 .col.left{border-right:1px solid var(--rule)}
 .col-head{
   position:sticky;top:0;z-index:3;background:var(--panel);
@@ -496,8 +496,20 @@ pre.draft{
 
 @media(max-width:940px){
   .body{grid-template-columns:1fr}
-  .col.left{border-right:0;border-bottom:1px solid var(--rule);max-height:46vh}
+  .col.left{border-right:0;border-bottom:1px solid var(--rule)}
   .verdict-inner{gap:20px}
+  /* Stacked columns inside a 100vh shell give two scroll traps and no page
+     behind them to take over, so a wheel over the wrong panel does nothing.
+     Narrow viewports scroll as an ordinary document instead. */
+  .shell{height:auto;min-height:100vh}
+  .col,.stage{overflow:visible;max-height:none}
+}
+
+/* Same trap when the window is short rather than narrow — a laptop at 700px
+   leaves the panes too small to scroll usefully while still capturing. */
+@media(max-height:640px){
+  .shell{height:auto;min-height:100vh}
+  .col,.stage{overflow:visible;max-height:none}
 }
 
 /* ── the finding, stated before the gap ─────────────────── */
@@ -637,7 +649,7 @@ pre.draft{
       <div class="samples" id="samples" hidden>
         <div class="samples-head">
           <h3>Try a sample cut</h3>
-          <span class="hint">No upload needed. Sixty seconds of public-domain film, chosen because a lot is going on in it.</span>
+          <span class="hint">No upload needed. Eight short cuts, archive and modern, chosen because a lot is going on in them.</span>
         </div>
         <div class="sample-grid" id="sample-grid"></div>
       </div>
@@ -902,10 +914,34 @@ function beginRun(head, sub){
   $("#replay").style.display="none";
   $("#run-head").textContent = head;
   $("#run-sub").textContent = sub;
+  if (!(history.state && history.state.cdStage === "run")){
+    history.pushState({cdStage:"run"}, "");
+  }
   show("running");
 }
 
-$("#btn-new").onclick = () => { show("start"); state.runId=null; };
+/* Returning to the sample list.
+
+   There were no history entries, so the browser back button did nothing and
+   the only route back was a header button that landed you at the top of a
+   long page rather than at the cuts you were choosing between. A run now
+   pushes one entry, back pops it, and either way the grid is what you see. */
+function goStart(){
+  show("start"); state.runId = null;
+  const samples = $("#samples");
+  if (samples && !samples.hidden){
+    samples.scrollIntoView({block:"start", behavior:"smooth"});
+  } else {
+    $("#start").scrollTop = 0;
+  }
+}
+
+$("#btn-new").onclick = () => {
+  if (history.state && history.state.cdStage === "run"){ history.back(); }
+  else { goStart(); }
+};
+
+window.addEventListener("popstate", () => goStart());
 
 /* ── spend gate ──────────────────────────────────────────
    Every path that reaches paid research goes through here. It is a
